@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node (for marp-cli local installs if any)
+node_modules/
+package-lock.json
+
+# LaTeX build artifacts (when testing inside the repo)
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.bbl
+*.blg
+
+# Build output dirs used by smoke tests
+build/
+/tmp-out/
+
+# Marp local cache
+.marprc

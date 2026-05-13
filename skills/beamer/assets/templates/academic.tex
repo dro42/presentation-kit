@@ -1,0 +1,94 @@
+% Beamer academic template — conference / seminar talk shape.
+% Motivation -> Method -> Results -> Conclusion.
+% Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\documentclass[aspectratio=169,12pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+
+\title[Short title]{Full Title of the Paper or Talk}
+\subtitle{Optional subtitle clarifying scope}
+\author[A. Drozd]{Andreas Drozd}
+\institute[FH Campus Wien]{FH Campus Wien, Department of Computer Science}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Motivation}
+
+\begin{frame}{Why this work}
+  \begin{itemize}
+    \item Concrete problem in one sentence
+    \item Why existing approaches fall short
+    \item What this work contributes
+  \end{itemize}
+  \note{60s. Set the stakes; do not over-explain context.}
+\end{frame}
+
+\section{Method}
+
+\begin{frame}{Approach}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item Independent variable
+        \item Controlled variables
+        \item Measurement protocol
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      % \includegraphics[width=\textwidth]{figures/architecture}
+      \fbox{\rule{0pt}{4cm}\rule{\textwidth}{0pt}}
+      \begin{center}\footnotesize architecture diagram\end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Results}
+
+\begin{frame}{Headline result}
+  \begin{block}{Finding}
+    One-sentence statement of the main result with a number.
+  \end{block}
+  \begin{itemize}
+    \item Supporting detail
+    \item Statistical test result
+    \item Limitation
+  \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+  \begin{itemize}
+    \item What we showed
+    \item Why it matters
+    \item What comes next
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]{Thank you}
+  \vfill
+  \centering
+  \Large Questions and discussion\\[1em]
+  \normalsize andidrd@gmail.com
+  \vfill
+\end{frame}
+
+\end{document}

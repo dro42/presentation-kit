@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "presentation-kit",
+  "description": "Marp + Beamer presentation toolkit for Claude Code",
+  "owner": {
+    "name": "Andreas Drozd",
+    "email": "andidrd@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "presentation-kit",
+      "source": "./",
+      "description": "Slash-command driven Marp + Beamer toolkit with builder subagent and user themes.",
+      "author": { "name": "Andreas Drozd", "email": "andidrd@gmail.com" },
+      "category": "productivity",
+      "homepage": "https://github.com/dro42/presentation-kit"
+    }
+  ]
+}

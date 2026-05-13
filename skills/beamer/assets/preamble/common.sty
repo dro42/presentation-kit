@@ -1,0 +1,37 @@
+% common.sty — shared preamble for presentation-kit Beamer decks.
+% Usage:  \usepackage{./preamble/common}
+% Loads a sensible default package surface so deck files can stay short.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{common}[2026/05/13 v0.1 presentation-kit common Beamer preamble]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
+
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{listings}
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+
+% Listings styling — quiet defaults that won't clash with the active theme.
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{red!60!black},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  framerule=0.4pt,
+  framesep=4pt,
+  tabsize=2
+}
+
+% Hide the navigation bullets that nobody uses.
+\setbeamertemplate{navigation symbols}{}
+
+\endinput

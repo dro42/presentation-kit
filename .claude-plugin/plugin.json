@@ -1,0 +1,18 @@
+{
+  "name": "presentation-kit",
+  "version": "0.1.0",
+  "description": "Slash-command driven presentation toolkit for Claude Code. Author and build Marp and LaTeX Beamer decks with bundled templates, a builder subagent for long renders, and a user-extensible theme system.",
+  "author": {
+    "name": "Andreas Drozd",
+    "email": "andidrd@gmail.com",
+    "url": "https://github.com/dro42"
+  },
+  "homepage": "https://github.com/dro42/presentation-kit",
+  "repository": "https://github.com/dro42/presentation-kit",
+  "license": "MIT",
+  "keywords": ["presentation", "slides", "marp", "beamer", "latex", "thesis", "deck"],
+  "commands": ["./commands/marp.md", "./commands/beamer.md"],
+  "agents": ["./agents/presentation-builder.md"],
+  "skills": ["./skills/marp/SKILL.md", "./skills/beamer/SKILL.md"],
+  "hooks": "./hooks/hooks.json"
+}

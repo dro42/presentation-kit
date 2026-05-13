@@ -1,0 +1,15 @@
+{
+  "description": "Detect presentation files in the current working directory at session start and nudge the user toward the matching slash command.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/detect-presentation.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+/* @theme hcw */
+/*
+ * HCW (FH Campus Wien) starter theme for Marp.
+ *
+ * This is a token-surface stub: the brand-specific values live in :root
+ * custom properties so the visual identity can be confirmed once and
+ * propagate to every deck that uses `theme: hcw`.
+ *
+ * To activate this theme:
+ *   1. Register with marp-cli:   `marp deck.md --theme-set path/to/hcw-starter.css --pdf`
+ *      or in marp.config.js:     `themeSet: ['./themes/hcw-starter.css']`
+ *      or place next to the deck (Obsidian Marp Slides auto-discovers).
+ *   2. In deck frontmatter:      `theme: hcw`   (matches @theme above, NOT the filename)
+ *
+ * Once the supervisor confirms the official HCW visual identity, fill in
+ * the TODO values below. No selectors should need to change.
+ */
+
+@import 'gaia';
+
+:root {
+  /* ─── Brand color tokens (TODO: confirm with supervisor / brand guide) ─── */
+  --primary-color:    #1f3a8a;   /* TODO: HCW primary (navy placeholder)  */
+  --secondary-color:  #6b7280;   /* TODO: HCW secondary (slate placeholder) */
+  --accent-color:     #b21f1f;   /* TODO: HCW accent (used sparingly)     */
+
+  /* ─── Surface tokens ────────────────────────────────────────────────── */
+  --bg-color:         #ffffff;
+  --text-color:       #1a1a1a;
+  --muted-color:      #6b7280;
+  --code-bg:          #f5f5f5;
+  --rule-color:       #e5e7eb;
+
+  /* ─── Typography tokens ─────────────────────────────────────────────── */
+  --font-family-body:     'Arial', 'Helvetica', sans-serif;        /* matches LaTeX thesis style */
+  --font-family-headings: 'Arial', 'Helvetica', sans-serif;        /* TODO: official heading font if different */
+  --font-family-mono:     'SF Mono', 'Menlo', 'Consolas', monospace;
+
+  --font-size-base:   28px;
+  --font-size-h1:     2.6em;
+  --font-size-h2:     1.6em;
+  --font-size-h3:     1.2em;
+
+  /* ─── Asset tokens (TODO) ───────────────────────────────────────────── */
+  --logo-path:        'fh-campus-wien-logo.png';   /* TODO: drop the official logo next to the deck */
+  --footer-text:      'BA2 · FH Campus Wien';      /* TODO: confirm exact wording with supervisor */
+}
+
+/* ─── Slide canvas ────────────────────────────────────────────────────── */
+section {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  padding: 60px 70px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family-headings);
+  color: var(--primary-color);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); color: var(--secondary-color); }
+
+a       { color: var(--accent-color); }
+strong  { color: var(--primary-color); }
+code    { background: var(--code-bg); padding: 0.1em 0.3em; border-radius: 3px; }
+pre     { background: var(--code-bg); border-left: 3px solid var(--primary-color); padding: 0.6em 0.9em; }
+hr      { border: none; border-top: 1px solid var(--rule-color); }
+
+blockquote {
+  border-left: 4px solid var(--secondary-color);
+  color: var(--muted-color);
+  padding-left: 1em;
+  margin-left: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border-bottom: 1px solid var(--rule-color);
+  padding: 0.4em 0.8em;
+}
+th {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* ─── Header / footer / pagination ────────────────────────────────────── */
+header, footer {
+  color: var(--muted-color);
+  font-size: 0.6em;
+  font-family: var(--font-family-body);
+}
+
+section::after {                  /* pagination */
+  color: var(--muted-color);
+  font-size: 0.6em;
+}
+
+/* ─── Slide classes ───────────────────────────────────────────────────── */
+
+/* Hero / title slide */
+section.lead {
+  text-align: center;
+  background: var(--bg-color);
+}
+section.lead h1 {
+  font-size: 2.8em;
+  margin-bottom: 0.4em;
+}
+section.lead h2 {
+  color: var(--secondary-color);
+  font-size: 1.2em;
+}
+
+/* Inverse / dark slide */
+section.invert {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+section.invert h1,
+section.invert h2,
+section.invert h3 { color: #ffffff; }
+section.invert a { color: var(--accent-color); }
+
+/* ─── Optional two-column layout (use `<!-- _class: two-column -->`) ──── */
+section.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* ─── End of HCW starter theme ────────────────────────────────────────── */

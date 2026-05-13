@@ -1,0 +1,49 @@
+% Beamer basic template — minimal generic deck.
+% Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\documentclass[aspectratio=169,12pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+\title{Deck Title}
+\subtitle{Optional subtitle}
+\author{Andreas Drozd}
+\institute{FH Campus Wien}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Section heading}
+  \begin{itemize}
+    \item First point
+    \item Second point
+    \item Third point
+  \end{itemize}
+  \note{Speaker note for this frame.}
+\end{frame}
+
+\begin{frame}{Another section}
+  Body text with \textbf{emphasis} and \emph{italics}.
+  \note{Talking points.}
+\end{frame}
+
+\begin{frame}[plain]{Thank you}
+  \vfill
+  \centering
+  \Large Questions?\\[1em]
+  \normalsize andidrd@gmail.com
+  \vfill
+\end{frame}
+
+\end{document}

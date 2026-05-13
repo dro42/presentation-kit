@@ -1,0 +1,65 @@
+% Beamer research-update template — supervisor check-in (5-8 frames, ~5-7 min).
+% Shape: what we tested · key result · problem · next step · ask.
+% Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\documentclass[aspectratio=169,12pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+\title{Research Update}
+\subtitle{Week of \today}
+\author{Andreas Drozd}
+\institute{FH Campus Wien}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{What we tested this week}
+  \begin{itemize}
+    \item Hypothesis under test
+    \item Setup variation
+    \item Number of runs
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Key result}
+  \begin{block}{Finding}
+    One-sentence headline with the number.
+  \end{block}
+  Supporting chart or table goes here.
+\end{frame}
+
+\begin{frame}{Problem / unexpected finding}
+  \begin{itemize}
+    \item What we did not expect
+    \item What we tried to mitigate
+    \item Whether it changes the experimental design
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Next step}
+  \begin{itemize}
+    \item Concrete experiment for next iteration
+    \item Decision needed from supervisor (if any)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Ask}
+  \begin{itemize}
+    \item Specific question that requires supervisor input
+    \item Why it can't be decided unilaterally
+  \end{itemize}
+\end{frame}
+
+\end{document}
