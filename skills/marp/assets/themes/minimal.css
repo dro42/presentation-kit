@@ -1,28 +1,28 @@
-/* @theme hcw */
+/* @theme minimal */
 /*
- * HCW (FH Campus Wien) starter theme for Marp.
+ * Minimal starter theme for Marp.
  *
- * This is a token-surface stub: the brand-specific values live in :root
- * custom properties so the visual identity can be confirmed once and
- * propagate to every deck that uses `theme: hcw`.
+ * Token-surface stub: brand-specific values live in :root custom properties
+ * so the visual identity can be confirmed once and propagate to every deck
+ * that uses `theme: minimal`. Use this as a starting point for your own
+ * branded theme; save customized copies via:
+ *
+ *   bash scripts/save-theme.sh marp <name> ./my-theme.css
  *
  * To activate this theme:
- *   1. Register with marp-cli:   `marp deck.md --theme-set path/to/hcw-starter.css --pdf`
- *      or in marp.config.js:     `themeSet: ['./themes/hcw-starter.css']`
+ *   1. Register with marp-cli:   `marp deck.md --theme-set path/to/minimal.css --pdf`
+ *      or in marp.config.js:     `themeSet: ['./themes/minimal.css']`
  *      or place next to the deck (Obsidian Marp Slides auto-discovers).
- *   2. In deck frontmatter:      `theme: hcw`   (matches @theme above, NOT the filename)
- *
- * Once the supervisor confirms the official HCW visual identity, fill in
- * the TODO values below. No selectors should need to change.
+ *   2. In deck frontmatter:      `theme: minimal`   (matches @theme above, NOT the filename)
  */
 
 @import 'gaia';
 
 :root {
-  /* ─── Brand color tokens (TODO: confirm with supervisor / brand guide) ─── */
-  --primary-color:    #1f3a8a;   /* TODO: HCW primary (navy placeholder)  */
-  --secondary-color:  #6b7280;   /* TODO: HCW secondary (slate placeholder) */
-  --accent-color:     #b21f1f;   /* TODO: HCW accent (used sparingly)     */
+  /* ─── Brand color tokens (override with your own values) ─────────────── */
+  --primary-color:    #1f3a8a;
+  --secondary-color:  #6b7280;
+  --accent-color:     #b21f1f;
 
   /* ─── Surface tokens ────────────────────────────────────────────────── */
   --bg-color:         #ffffff;
@@ -32,8 +32,8 @@
   --rule-color:       #e5e7eb;
 
   /* ─── Typography tokens ─────────────────────────────────────────────── */
-  --font-family-body:     'Arial', 'Helvetica', sans-serif;        /* matches LaTeX thesis style */
-  --font-family-headings: 'Arial', 'Helvetica', sans-serif;        /* TODO: official heading font if different */
+  --font-family-body:     'Arial', 'Helvetica', sans-serif;
+  --font-family-headings: 'Arial', 'Helvetica', sans-serif;
   --font-family-mono:     'SF Mono', 'Menlo', 'Consolas', monospace;
 
   --font-size-base:   28px;
@@ -41,9 +41,9 @@
   --font-size-h2:     1.6em;
   --font-size-h3:     1.2em;
 
-  /* ─── Asset tokens (TODO) ───────────────────────────────────────────── */
-  --logo-path:        'fh-campus-wien-logo.png';   /* TODO: drop the official logo next to the deck */
-  --footer-text:      'BA2 · FH Campus Wien';      /* TODO: confirm exact wording with supervisor */
+  /* ─── Asset tokens ──────────────────────────────────────────────────── */
+  --logo-path:        '';
+  --footer-text:      '';
 }
 
 /* ─── Slide canvas ────────────────────────────────────────────────────── */
@@ -134,4 +134,4 @@ section.two-column {
   gap: 2rem;
 }
 
-/* ─── End of HCW starter theme ────────────────────────────────────────── */
+/* ─── End of minimal starter theme ────────────────────────────────────── */
