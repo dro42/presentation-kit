@@ -1,0 +1,49 @@
+% Beamer embed: animated GIF (first-frame in most viewers) or
+%                animategraphics-based playback in Adobe Acrobat.
+%
+% PREREQUISITES:
+%   1. Convert the cast to GIF:
+%        agg demo.cast demo.gif --theme monokai --font-size 18 --cols 100 --rows 30
+%   2. Place demo.gif next to the .tex source.
+%
+% APPROACH A — single-frame embed (simplest; works everywhere):
+
+\begin{frame}{Terminal demo}
+  \begin{center}
+    \includegraphics[width=0.85\textwidth]{demo.gif}
+  \end{center}
+  \vspace{0.5em}
+  \small Live recording available at: \texttt{<URL or path>}
+\end{frame}
+
+% APPROACH B — animategraphics-based playback (works in Adobe Acrobat;
+% other PDF viewers fall back to static):
+%
+% 1. Extract frames from the GIF (or from the cast directly with agg):
+%      ffmpeg -i demo.gif -vf fps=12 demo-frames/frame-%03d.png
+%      # Note the N = total frame count for the line below
+%
+% 2. In the preamble:
+%      \usepackage{animate}
+%
+% 3. In a frame:
+
+\begin{frame}{Terminal demo (animate)}
+  \begin{center}
+    \animategraphics[loop,autoplay,width=0.85\textwidth]{12}{demo-frames/frame-}{0}{N-1}
+  \end{center}
+\end{frame}
+
+% Where {12} is the frame rate, {demo-frames/frame-} is the prefix, and
+% {0}{N-1} are the start and end indices. Replace N with the actual frame
+% count from ffmpeg.
+%
+% APPROACH C — link-out fallback (when GIF size is prohibitive):
+
+\begin{frame}{Terminal demo}
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{demo-first-frame.png}\\
+    \vspace{0.5em}
+    \large\href{<URL>}{Watch the live recording}
+  \end{center}
+\end{frame}
