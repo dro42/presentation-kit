@@ -1,0 +1,31 @@
+meta:
+  title: "<LIGHTNING TALK TITLE>"
+  author: "<NAME>"
+  aspect_ratio: "16:9"
+
+slides:
+  - layout: title
+    title: "<LIGHTNING TALK TITLE>"
+    subtitle: "<ONE-SENTENCE HOOK that makes the point land before you've spoken>"
+    notes: "5 minutes, 4-6 slides max. Rehearse with a timer."
+
+  - layout: quote
+    text: "<The single claim this talk exists to make. Specific and contestable.>"
+    cite: "The one point"
+    notes: "Just the claim — no bullets."
+
+  - layout: bullets
+    title: "Evidence"
+    bullets:
+      - "ONE chart, snippet, or demo — never two"
+      - "Swap this to: layout: image, image: ./evidence.png OR layout: code, code: ..."
+
+  - layout: bullets
+    title: "Takeaway"
+    bullets:
+      - "<ACTION> — what should the audience do Monday morning?"
+      - "<LINK> — where do they go to learn more?"
+
+  - layout: end
+    title: "Thanks"
+    subtitle: "<EMAIL> · <SOCIAL HANDLE>"

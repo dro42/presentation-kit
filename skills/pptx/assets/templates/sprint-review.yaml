@@ -1,0 +1,68 @@
+meta:
+  title: "Sprint <N> Review"
+  author: "<NAME>"
+  aspect_ratio: "16:9"
+
+slides:
+  - layout: title
+    title: "Sprint <N> Review"
+    subtitle: "<DATE-RANGE> · <TEAM>"
+
+  - layout: bullets
+    title: "Sprint goal"
+    bullets:
+      - "Goal: <one-sentence goal as committed at sprint start>"
+      - "Met? ✅ / ⚠️ partial / ❌"
+      - "One sentence why"
+
+  - layout: bullets
+    title: "What we shipped"
+    bullets:
+      - "<FEATURE / FIX 1> — one-line value statement"
+      - "<FEATURE / FIX 2> — one-line value statement"
+      - "<FEATURE / FIX 3> — one-line value statement"
+
+  - layout: bullets
+    title: "Demo"
+    bullets:
+      - "Live demo or asciinema GIF goes here"
+      - "Swap this slide to: layout: image, image: ./demo.gif"
+      - "See the asciinema skill for cast → GIF conversion (agg)"
+    notes: "Once demo.gif exists, replace this slide with: layout: image, image: ./demo.gif, caption: Recorded via asciinema → agg."
+
+  - layout: bullets
+    title: "Metrics"
+    bullets:
+      - "Velocity (this / last): <N> / <N>"
+      - "Defects opened: <N>"
+      - "P0 incidents: <N>"
+
+  - layout: bullets
+    title: "What slipped & why"
+    bullets:
+      - "<COMMITTED ITEM> — slipped because: <root cause>. Plan: <action>"
+      - "<COMMITTED ITEM> — slipped because: <root cause>. Plan: <action>"
+
+  - layout: bullets
+    title: "Retro headlines"
+    bullets:
+      - "Start: <one practice we should adopt>"
+      - "Stop: <one practice that's costing us>"
+      - "Continue: <one practice that's working>"
+
+  - layout: bullets
+    title: "Next sprint commitment"
+    bullets:
+      - "<ITEM 1> — owner: <NAME>"
+      - "<ITEM 2> — owner: <NAME>"
+      - "Sprint goal: <one-sentence goal>"
+
+  - layout: bullets
+    title: "Asks / blockers"
+    bullets:
+      - "<ASK 1> — what we need from <stakeholder>, by when"
+      - "<BLOCKER 1> — what's blocked, who can unblock"
+
+  - layout: end
+    title: "Q&A"
+    subtitle: "<EMAIL>"

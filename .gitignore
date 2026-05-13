@@ -30,3 +30,7 @@ build/
 
 # Marp local cache
 .marprc
+
+# Python
+__pycache__/
+*.pyc

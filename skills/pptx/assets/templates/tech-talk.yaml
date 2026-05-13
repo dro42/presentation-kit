@@ -1,0 +1,141 @@
+meta:
+  title: "<TALK TITLE>"
+  author: "<NAME>"
+  aspect_ratio: "16:9"
+
+slides:
+  - layout: title
+    title: "<TALK TITLE>"
+    subtitle: "<SUBTITLE: clarify scope or hook>"
+    notes: "<NAME> · <ROLE> @ <ORG> · <VENUE> · YYYY-MM-DD"
+
+  - layout: quote
+    text: "<The war story, the surprising number, the 'wait what' moment>"
+    cite: "The hook"
+    notes: "60s. Visual > bullets here."
+
+  - layout: bullets
+    title: "The problem"
+    bullets:
+      - "<One-sentence problem statement>"
+      - "<Why it matters — who feels the pain, how often, how bad>"
+      - "<Why it's hard — the constraint that rules out the obvious solution>"
+
+  - layout: bullets
+    title: "Why this is hard"
+    bullets:
+      - "<CONSTRAINT 1> — one-line explanation"
+      - "<CONSTRAINT 2> — one-line explanation"
+      - "<CONSTRAINT 3> — one-line explanation"
+
+  - layout: bullets
+    title: "Prior art"
+    bullets:
+      - "<APPROACH A> — what it does well, what it doesn't"
+      - "<APPROACH B> — what it does well, what it doesn't"
+      - "<APPROACH C> — what it does well, what it doesn't"
+
+  - layout: bullets
+    title: "Our approach"
+    bullets:
+      - "<One-sentence headline>"
+      - "<Key design decision 1>"
+      - "<Key design decision 2>"
+
+  - layout: code
+    title: "Design deep-dive: <COMPONENT 1>"
+    language: python
+    code: |
+      def compute(x: int) -> int:
+          a = x * 2
+          b = a + 1
+          return b * b
+    notes: "The interesting bit — algorithm or data structure."
+
+  - layout: bullets
+    title: "Design deep-dive: <COMPONENT 2>"
+    bullets:
+      - "Inputs / outputs"
+      - "The trade-off we made and why"
+      - "The thing we discovered while building this"
+
+  - layout: bullets
+    title: "Implementation notes"
+    bullets:
+      - "Language / runtime: <choice and why>"
+      - "Built vs reused: <what we wrote, what we leveraged>"
+      - "Operational surface: <how it's deployed, scaled, observed>"
+
+  - layout: bullets
+    title: "Live demo"
+    bullets:
+      - "Demo placeholder"
+      - "Swap to: layout: image, image: ./demo.gif (from asciinema skill)"
+      - "Or live-coding in slideshow mode"
+
+  - layout: bullets
+    title: "Results: <HEADLINE METRIC>"
+    bullets:
+      - "<NUMBER> <UNIT> vs <BASELINE> at <FACTOR>×"
+      - "Test conditions: <briefly>"
+      - "Statistical significance: <one line>"
+
+  - layout: bullets
+    title: "Results: <SUPPORTING METRIC>"
+    bullets:
+      - "<Sub-metric 1>: <number>"
+      - "<Sub-metric 2>: <number>"
+      - "<Caveat / scope of validity>"
+
+  - layout: bullets
+    title: "What we got wrong"
+    bullets:
+      - "<MISTAKE 1> — what we thought, what actually happened, what we changed"
+      - "<MISTAKE 2> — same shape"
+
+  - layout: bullets
+    title: "Lessons learned"
+    bullets:
+      - "<LESSON 1 — generalizable beyond this project>"
+      - "<LESSON 2 — generalizable beyond this project>"
+      - "<LESSON 3 — generalizable beyond this project>"
+
+  - layout: bullets
+    title: "Future directions"
+    bullets:
+      - "<DIRECTION 1>"
+      - "<DIRECTION 2>"
+      - "<DIRECTION 3>"
+
+  - layout: bullets
+    title: "Resources"
+    bullets:
+      - "Code: <URL>"
+      - "Paper / writeup: <URL>"
+      - "Slides: <URL>"
+      - "Contact: <EMAIL> · <SOCIAL HANDLE>"
+
+  - layout: end
+    title: "Questions?"
+    subtitle: "<EMAIL>"
+
+  - layout: section
+    title: "Backup"
+
+  - layout: bullets
+    title: "Backup: alternative design considered"
+    bullets:
+      - "What we considered"
+      - "Why we didn't pick it"
+      - "Conditions under which it would win"
+
+  - layout: bullets
+    title: "Backup: detailed benchmarks"
+    bullets:
+      - "Workload A: <numbers>"
+      - "Workload B: <numbers>"
+      - "Workload C: <numbers>"
+
+  - layout: quote
+    text: "<Anticipated question>"
+    cite: "Backup: FAQ"
