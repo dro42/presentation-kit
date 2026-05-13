@@ -1,25 +1,24 @@
-% Beamer thesis-defense template — BA2 defense skeleton.
-% Mirrors marp/assets/templates/thesis-defense.md (Sidecar vs Ambient).
-% Use only for the actual defense; replace REPLACE-* figure paths with real artifacts.
+% Beamer thesis-defense template — bachelor/master defense skeleton.
+% Replace REPLACE-* figure paths and <PLACEHOLDER> tokens with real content.
 % Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 \documentclass[aspectratio=169,12pt]{beamer}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[ngerman,english]{babel}
+\usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{hyperref}
 
-\usetheme{HCW}                                 % requires beamerthemeHCW.sty on TEXINPUTS
+\usetheme{Minimal}                             % requires beamerthemeMinimal.sty on TEXINPUTS
 \setbeamertemplate{navigation symbols}{}
 
-\title[Sidecar vs.\ Ambient]{Sidecar vs.\ Ambient}
-\subtitle{Telemetry Reliability and Automated Canary Remediation\\in a GitOps-Managed Kubernetes Environment}
-\author[A.\ Drozd]{Ing.\ Andreas Drozd}
-\institute[CSDC]{Computer Science \& Digital Communications\\FH Campus Wien\\\textit{Supervisor: Priv.-Doz.\ Dr.\ Karl M.\ Goeschka}}
+\title[<SHORT TITLE>]{<FULL THESIS TITLE>}
+\subtitle{<SUBTITLE: one line describing scope or contribution>}
+\author[<SHORT-NAME>]{<NAME>}
+\institute[<SHORT-INSTITUTE>]{<DEPARTMENT>\\<INSTITUTE>\\\textit{Supervisor: <SUPERVISOR>}}
 \date{\today}
 
 \begin{document}
@@ -30,18 +29,18 @@
 
 \begin{frame}{Why this thesis}
   \begin{itemize}
-    \item Service meshes are now standard infrastructure
-    \item Two paradigms compete: \textbf{sidecar} (per-pod proxy) vs.\ \textbf{ambient} (shared per-node)
-    \item Their telemetry is \emph{assumed comparable} --- but is it, under canary deployments with fault injection?
+    \item <One-sentence problem statement>
+    \item <The two paradigms / camps / approaches in tension>
+    \item <The gap your thesis closes --- the assumed-but-unverified, or the missing>
   \end{itemize}
-  \note{90s. Set the stakes: automated canary decisions ride on this telemetry.}
+  \note{90s. Set the stakes; do not over-explain context.}
 \end{frame}
 
 \begin{frame}{Research questions}
   \begin{itemize}
-    \item \textbf{RQ1 --- Decision correctness:} how do false-positive and false-negative rates of automated canary abort decisions differ between modes?
-    \item \textbf{RQ2 --- Remediation speed:} how does end-to-end remediation latency compare?
-    \item \textbf{RQ3 --- Telemetry fidelity:} what differences in metric completeness, label attribution, and signal stability exist?
+    \item \textbf{RQ1 --- <DIMENSION>:} <RQ1 in one sentence>
+    \item \textbf{RQ2 --- <DIMENSION>:} <RQ2 in one sentence>
+    \item \textbf{RQ3 --- <DIMENSION>:} <RQ3 in one sentence>
   \end{itemize}
 \end{frame}
 
@@ -49,78 +48,78 @@
   \begin{columns}[T]
     \begin{column}{0.55\textwidth}
       \begin{itemize}
-        \item k3s on 2$\times$ Raspberry Pi 5 (16 GB)
-        \item Istio \textbf{sidecar 1.28} vs.\ \textbf{ambient 1.29}
-        \item podinfo v6.5.4 / v6.6.0 --- 90/10 canary split
-        \item Fault injection via Argo Workflows (HTTP 500 + latency)
+        \item <Hardware / platform>
+        \item <Comparator A> vs.\ <Comparator B>
+        \item <Workload / dataset / fault model>
+        \item <How the experiment is driven>
       \end{itemize}
     \end{column}
     \begin{column}{0.4\textwidth}
-      % \includegraphics[width=\textwidth]{figures/REPLACE-cluster-arch}
+      % \includegraphics[width=\textwidth]{figures/REPLACE-architecture}
       \fbox{\rule{0pt}{4.5cm}\rule{\textwidth}{0pt}}
-      \begin{center}\footnotesize REPLACE-cluster-arch.svg\end{center}
+      \begin{center}\footnotesize REPLACE-architecture\end{center}
     \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}{Methodology}
   \begin{itemize}
-    \item Single independent variable: mesh mode
-    \item Clean-state reset between every run (GitOps-controlled mode switch)
-    \item 10 runs per mode at each fault percentage
-    \item Timing chain: $T_0$ (fault start) $\to$ $T_1$ (alert fires) $\to$ $T_5$ (traffic shift complete)
+    \item Single independent variable: <variable>
+    \item Clean-state reset between every run
+    \item <N> runs per condition at each <factor level>
+    \item Timing chain: $T_0$ $\to$ $T_1$ $\to$ $T_n$
   \end{itemize}
 \end{frame}
 
-\begin{frame}{RQ1: Decision correctness}
+\begin{frame}{RQ1: <DIMENSION>}
   \begin{columns}[T]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
-        \item Sidecar: X false positives, Y false negatives
-        \item Ambient: X' false positives, Y' false negatives
+        \item <Comparator A>: <number> <unit>
+        \item <Comparator B>: <number> <unit>
       \end{itemize}
       \begin{alertblock}{Direction}
         Direction of difference and magnitude in one sentence.
       \end{alertblock}
     \end{column}
     \begin{column}{0.45\textwidth}
-      % \includegraphics[width=\textwidth]{figures/REPLACE-rq1-decision-matrix}
+      % \includegraphics[width=\textwidth]{figures/REPLACE-rq1}
       \fbox{\rule{0pt}{4.5cm}\rule{\textwidth}{0pt}}
-      \begin{center}\footnotesize REPLACE-rq1-decision-matrix.svg\end{center}
+      \begin{center}\footnotesize REPLACE-rq1\end{center}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{RQ2: Remediation speed}
+\begin{frame}{RQ2: <DIMENSION>}
   \begin{columns}[T]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
-        \item Median $T_1 - T_0$ (alert latency): sidecar X s vs.\ ambient Y s
-        \item Median $T_5 - T_0$ (full remediation): sidecar X s vs.\ ambient Y s
+        \item <Comparator A> median: <number> <unit>
+        \item <Comparator B> median: <number> <unit>
         \item Statistical test result in one line
       \end{itemize}
     \end{column}
     \begin{column}{0.45\textwidth}
-      % \includegraphics[width=\textwidth]{figures/REPLACE-rq2-timing-boxplot}
+      % \includegraphics[width=\textwidth]{figures/REPLACE-rq2}
       \fbox{\rule{0pt}{4.5cm}\rule{\textwidth}{0pt}}
-      \begin{center}\footnotesize REPLACE-rq2-timing-boxplot.svg\end{center}
+      \begin{center}\footnotesize REPLACE-rq2\end{center}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{RQ3: Telemetry fidelity}
+\begin{frame}{RQ3: <DIMENSION>}
   \begin{itemize}
-    \item Metric completeness: \% of expected series present
-    \item Label attribution: source/destination resolution accuracy
-    \item Signal stability: variance across runs
-    \item \textbf{Mode-by-mode comparison, one chart}
+    \item <Sub-metric 1>: <one-line finding>
+    \item <Sub-metric 2>: <one-line finding>
+    \item <Sub-metric 3>: <one-line finding>
+    \item \textbf{<Comparator A> vs.\ <Comparator B>, one chart}
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Discussion}
   \begin{itemize}
-    \item Where sidecar wins, where ambient wins
-    \item Threats to validity (cluster scale, hardware homogeneity, fault model)
+    \item Where <Comparator A> wins, where <Comparator B> wins
+    \item Threats to validity (<scale>, <hardware homogeneity>, <fault model>)
     \item Practical implication: which mode for which workload profile
   \end{itemize}
 \end{frame}
@@ -130,16 +129,16 @@
     \item RQ1 answer in one sentence
     \item RQ2 answer in one sentence
     \item RQ3 answer in one sentence
-    \item \textbf{Contribution:} reproducible GitOps-managed comparison harness
+    \item \textbf{Contribution:} <reproducible artifact / new insight / measurement framework>
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Future work}
   \begin{itemize}
-    \item Larger-scale cluster (multi-node ambient)
-    \item Production traffic patterns vs.\ synthetic
-    \item L7 policy enforcement comparison
-    \item eBPF-based meshes (Cilium) as a third arm
+    \item <Direction 1 --- larger scale>
+    \item <Direction 2 --- realistic workloads>
+    \item <Direction 3 --- additional comparator>
+    \item <Direction 4 --- different layer of the stack>
   \end{itemize}
 \end{frame}
 
@@ -148,8 +147,8 @@
   \centering
   \Large Questions and discussion\\[1em]
   \normalsize
-  andidrd@gmail.com\\
-  github.com/dro42/sem6\_ba2\_service\_mesh\_latex
+  <EMAIL>\\
+  <REPO-OR-PROJECT-URL>
   \vfill
 \end{frame}
 
@@ -165,29 +164,29 @@
   \vfill
 \end{frame}
 
-\begin{frame}{Backup: Alert pipeline}
+\begin{frame}{Backup: <COMPONENT-A>}
   \begin{columns}[T]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
-        \item PrometheusRule $\to$ Alertmanager
-        \item Alertmanager $\to$ Argo Events webhook
-        \item Sensor $\to$ Workflow
+        \item <Pipeline step 1>
+        \item <Pipeline step 2>
+        \item <Pipeline step 3>
       \end{itemize}
-      Why event-driven over polling.
+      <Why this design choice over the alternative>
     \end{column}
     \begin{column}{0.45\textwidth}
-      % \includegraphics[width=\textwidth]{figures/REPLACE-alert-pipeline}
+      % \includegraphics[width=\textwidth]{figures/REPLACE-backup-1}
       \fbox{\rule{0pt}{4.5cm}\rule{\textwidth}{0pt}}
-      \begin{center}\footnotesize REPLACE-alert-pipeline.svg\end{center}
+      \begin{center}\footnotesize REPLACE-backup-1\end{center}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Backup: Mode-switch GitOps flow}
+\begin{frame}{Backup: <COMPONENT-B>}
   \begin{itemize}
-    \item ArgoCD app-of-apps pattern
-    \item \texttt{modes/\{none,istio-sidecar,istio-ambient\}} directories
-    \item Mean switch time: REPLACE s
+    \item <Key configuration detail 1>
+    \item <Key configuration detail 2>
+    \item <Notable metric: <number> <unit>>
   \end{itemize}
 \end{frame}
 

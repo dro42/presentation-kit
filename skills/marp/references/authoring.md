@@ -10,17 +10,17 @@ marp: true              # required — without it the file is plain Markdown
 theme: default          # default | gaia | uncover | <name registered via --theme-set>
 size: 16:9              # 16:9 (default) | 4:3 | "1280x720" etc.
 paginate: true          # show slide numbers from slide 2 onward
-header: "BA2 · Sidecar vs Ambient"   # cascading header text (HTML allowed)
-footer: "© 2026 Andreas Drozd"       # cascading footer text
+header: "<PROJECT> · <SHORT TITLE>"  # cascading header text (HTML allowed)
+footer: "© 2026 <NAME>"              # cascading footer text
 backgroundColor: "#fff" # default bg color for all slides
 color: "#222"           # default text color
 class: invert           # apply a class globally (e.g. invert = dark mode)
 
 # Metadata for export (PDF/PPTX)
-title: "Thesis Defense — RQ1 Findings"
-author: "Andreas Drozd"
-description: "BA2 results presentation"
-keywords: "service mesh, istio, canary"
+title: "<TITLE>"
+author: "<NAME>"
+description: "<DESCRIPTION>"
+keywords: "<comma, separated, keywords>"
 ---
 ```
 

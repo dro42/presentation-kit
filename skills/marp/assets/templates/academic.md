@@ -4,9 +4,9 @@ theme: gaia
 paginate: true
 size: 16:9
 header: "REPLACE: Conference / Venue"
-footer: "Andreas Drozd · FH Campus Wien"
+footer: "<NAME> · <INSTITUTE>"
 title: "REPLACE: Talk title"
-author: "Andreas Drozd"
+author: "<NAME>"
 ---
 
 <!-- _class: lead -->
@@ -16,8 +16,8 @@ author: "Andreas Drozd"
 
 Subtitle clarifying scope
 
-**Andreas Drozd**
-FH Campus Wien · YYYY-MM-DD
+**<NAME>**
+<INSTITUTE> · YYYY-MM-DD
 
 ---
 
@@ -87,4 +87,4 @@ FH Campus Wien · YYYY-MM-DD
 
 Questions and discussion
 
-andidrd@gmail.com
+<EMAIL>

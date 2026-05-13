@@ -57,7 +57,7 @@ A theme is a file until it's *registered* with Marp. Three ways:
 1. **In marp-cli**: `marp deck.md --theme-set path/to/theme.css --pdf`
 2. **In `marp.config.js`**:
    ```js
-   module.exports = { themeSet: ['./themes/hcw.css'] };
+   module.exports = { themeSet: ['./themes/minimal.css'] };
    ```
 3. **In the Obsidian Marp Slides plugin**: drop the `.css` next to the deck — auto-discovered.
 
@@ -66,7 +66,7 @@ Then in the deck:
 ```yaml
 ---
 marp: true
-theme: hcw                # matches @theme inside the CSS, NOT the filename
+theme: minimal            # matches @theme inside the CSS, NOT the filename
 ---
 ```
 
@@ -89,32 +89,32 @@ h2 { color: var(--accent-color); }
 section::after { color: var(--accent-color); }
 ```
 
-## The HCW starter theme
+## The minimal starter theme
 
-`assets/themes/hcw-starter.css` ships as a token-surface stub. The user fills in real values when they (or the supervisor) confirm brand assets. The token surface is exposed via CSS custom properties so a future audit is one search-and-replace:
+`assets/themes/minimal.css` ships as a token-surface stub. Override the brand-specific values to match your institution, company, or personal identity. The token surface is exposed via CSS custom properties so a future re-brand is one search-and-replace:
 
 ```css
-/* @theme hcw */
+/* @theme minimal */
 @import 'gaia';
 
 :root {
-  /* Brand tokens — fill these when brand assets are confirmed */
-  --primary-color:   #1f3a8a;     /* TODO: HCW primary */
-  --secondary-color: #6b7280;     /* TODO: HCW secondary */
-  --accent-color:    #b21f1f;     /* TODO: HCW accent */
+  /* Brand tokens — override with your own values */
+  --primary-color:   #1f3a8a;     /* override: brand primary */
+  --secondary-color: #6b7280;     /* override: brand secondary */
+  --accent-color:    #b21f1f;     /* override: brand accent */
   --bg-color:        #ffffff;
   --text-color:      #1a1a1a;
   --muted-color:     #6b7280;
 
-  --font-family-headings: 'Arial', sans-serif;     /* TODO: official heading font if different */
-  --font-family-body:     'Arial', sans-serif;     /* matches the LaTeX thesis style */
+  --font-family-headings: 'Arial', sans-serif;
+  --font-family-body:     'Arial', sans-serif;
 
-  --logo-path:       'fh-campus-wien-logo.png';    /* TODO: drop the actual logo here */
-  --footer-text:     'BA2 · FH Campus Wien';       /* TODO: confirm with supervisor */
+  --logo-path:       '';          /* drop your logo here */
+  --footer-text:     '';          /* per-deck or per-project footer */
 }
 ```
 
-The starter sets up enough Selectors to render usable slides immediately; once HCW colors are filled in, every existing thesis deck inherits the new look without per-deck changes.
+Save your customized copy as a personal theme via `bash scripts/save-theme.sh marp <name> ./my-theme.css` — it lands in `~/.local/share/presentation-kit/themes/marp/` and survives plugin updates.
 
 ## Iterating on a theme
 
@@ -129,7 +129,7 @@ Don't iterate via PDF export — re-renders take 5-10 s each. Server mode is sub
 
 ## Common theme pitfalls
 
-- **`@theme` name vs filename mismatch.** The CSS declares `@theme hcw`. The frontmatter must say `theme: hcw`, regardless of whether the file is called `hcw-starter.css` or `mytheme.css`.
+- **`@theme` name vs filename mismatch.** The CSS declares `@theme minimal`. The frontmatter must say `theme: minimal`, regardless of whether the file is called `minimal.css` or `mytheme.css`.
 - **Forgetting to register.** A theme that isn't on `themeSet`/`--theme-set`/co-located with the deck silently falls back to `default`.
 - **Overriding Marpit pseudo-elements without `!important` doesn't work in some cases.** `section::after` (pagination) is one of them.
 - **Custom fonts via `@font-face` don't survive PDF export.** Embed via system fonts or accept the fallback. For thesis-quality PDFs, prefer sans-serifs that are bundled with macOS/most systems (Arial, Helvetica) over web fonts.

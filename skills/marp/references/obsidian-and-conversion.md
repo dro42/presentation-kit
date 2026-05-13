@@ -4,7 +4,7 @@ This file covers two related concerns: how Marp decks behave inside the Obsidian
 
 ## The Obsidian Marp Slides plugin (Samuele Cozzi)
 
-The vault at `/Users/andi/Documents/FH/ba2/fh_vault/.obsidian/plugins/marp-slides` runs version 0.46.x. It renders Marp markdown in a side pane while editing — no need to run marp-cli for live preview.
+The Marp Slides plugin (Samuele Cozzi) renders Marp markdown in a side pane while editing — no need to run marp-cli for live preview. Install it from the Obsidian community plugins gallery.
 
 **What works the same as marp-cli**:
 - Frontmatter (`marp: true`, `theme:`, `paginate:`, etc.)
@@ -29,12 +29,12 @@ The user decides the deck location per call. Sensible defaults to *suggest* (but
 
 | Context | Suggested path |
 |---|---|
-| Thesis-related deck (defense, supervisor update, status) | `fh_vault/6_Sem/BA2/Presentations/YYYY-MM-DD-<slug>.md` |
-| Deck derived from a research-session note | Same folder as the source — `fh_vault/6_Sem/BA2/Research/<session>/slides.md` |
-| Deck derived from an experiment results note | Same folder as the source — `fh_vault/6_Sem/BA2/Experiment/results/<date>/slides.md` |
+| Thesis-related deck (defense, supervisor update, status) | `<vault>/<thesis-folder>/Presentations/YYYY-MM-DD-<slug>.md` |
+| Deck derived from a research-session note | Same folder as the source — `<vault>/<thesis-folder>/Research/<session>/slides.md` |
+| Deck derived from an experiment results note | Same folder as the source — `<vault>/<thesis-folder>/Experiment/results/<date>/slides.md` |
 | Generic / unsure | Ask the user |
 
-The Presentations folder doesn't pre-exist; create it on first use.
+If a `Presentations/` folder doesn't pre-exist, create it on first use. Always confirm the path with the user before writing — there is no universally correct vault structure.
 
 ## Converting an existing note into a deck
 
@@ -91,7 +91,7 @@ Always write the deck to a **new file** (e.g. `<source>-slides.md` next to the s
 
 ### Worked example — research note → deck
 
-Source note: `fh_vault/6_Sem/BA2/Research/2026-04-12 - canary remediation/summary.md` with H1 title, four H2 sections (Background, Method, Findings, Open Questions), each 3-5 paragraphs of prose plus one figure.
+Source note: `<vault>/Research/<YYYY-MM-DD> - <topic>/summary.md` with H1 title, four H2 sections (Background, Method, Findings, Open Questions), each 3-5 paragraphs of prose plus one figure.
 
 Conversion (~8 slides):
 

@@ -42,7 +42,7 @@ A frame title is the H2-equivalent. Avoid putting it inside the body via `\frame
 \end{exampleblock}
 ```
 
-Blocks pick their colors from the active theme. With `beamerthemeHCW`, `alertblock` uses the HCW accent red and `exampleblock` uses muted-green.
+Blocks pick their colors from the active theme. With `beamerthemeMinimal`, `alertblock` uses the brand accent (red by default) and `exampleblock` uses the secondary tone.
 
 ## Two-column layout
 
@@ -189,7 +189,7 @@ Example: custom footline showing author + page count —
 }
 ```
 
-The bundled `beamerthemeHCW.sty` uses this pattern throughout; read it as the worked example.
+The bundled `beamerthemeMinimal.sty` uses this pattern throughout; read it as the worked example.
 
 ## Title page customization
 
@@ -208,7 +208,7 @@ The bundled `beamerthemeHCW.sty` uses this pattern throughout; read it as the wo
 \end{frame}
 ```
 
-`[plain]` strips the header/footer for the title slide. The HCW theme overrides `\titlepage` directly so you don't need to write this manually.
+`[plain]` strips the header/footer for the title slide. The bundled `Minimal` theme styles `\titlepage` directly so you can use the default title-frame pattern instead of hand-rolling one.
 
 ## Backup sections (Q&A material)
 
