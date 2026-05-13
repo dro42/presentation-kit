@@ -115,7 +115,7 @@ If a build fails, include the verbatim error block:
 Error:
 
 \```
-! LaTeX Error: File `beamerthemeHCW.sty' not found.
+! LaTeX Error: File `beamerthemeMinimal.sty' not found.
 \```
 ```
 

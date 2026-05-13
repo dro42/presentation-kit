@@ -10,7 +10,7 @@ Activate the `beamer` skill at `${CLAUDE_PLUGIN_ROOT}/skills/beamer/SKILL.md` an
 1. User themes — `${XDG_DATA_HOME:-$HOME/.local/share}/presentation-kit/themes/beamer/`
 2. Bundled themes — `${CLAUDE_PLUGIN_ROOT}/skills/beamer/assets/themes/`
 
-User themes shadow bundled themes when basenames match. Beamer requires the `.sty` file to be on `TEXINPUTS` — copy the resolved theme next to the `.tex` source (or symlink it) before running `latexmk`. Use `\usetheme{NameWithoutBeamerThemePrefix}` in the document (e.g. `beamerthemeHCW.sty` → `\usetheme{HCW}`).
+User themes shadow bundled themes when basenames match. Beamer requires the `.sty` file to be on `TEXINPUTS` — copy the resolved theme next to the `.tex` source (or symlink it) before running `latexmk`. Use `\usetheme{NameWithoutBeamerThemePrefix}` in the document (e.g. `beamerthemeMinimal.sty` → `\usetheme{Minimal}`).
 
 **Save the current theme** with `bash ${CLAUDE_PLUGIN_ROOT}/scripts/save-theme.sh beamer <name> <sty-file>`. Append `--force` before the format argument to overwrite an existing user theme.
 
