@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "presentation-kit",
-  "description": "Marp + Beamer presentation toolkit for Claude Code",
+  "description": "Multi-format presentation toolkit for Claude Code: Marp, Beamer, Slidev, PowerPoint, asciinema",
   "owner": {
     "name": "Andreas Drozd",
     "email": "andidrd@gmail.com"
@@ -10,7 +10,7 @@
     {
       "name": "presentation-kit",
       "source": "./",
-      "description": "Slash-command driven Marp + Beamer toolkit with builder subagent and user themes.",
+      "description": "Slash-command driven toolkit for authoring and building decks across Marp, LaTeX Beamer, Slidev, PowerPoint (via python-pptx), and asciinema terminal demos. Includes a builder subagent for long renders, a SessionStart hook that detects presentation files, and a user-extensible theme system. AI-agnostic skills also installable into Codex CLI and Gemini CLI.",
       "author": { "name": "Andreas Drozd", "email": "andidrd@gmail.com" },
       "category": "productivity",
       "homepage": "https://github.com/dro42/presentation-kit"

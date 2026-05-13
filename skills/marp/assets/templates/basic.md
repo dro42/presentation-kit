@@ -4,7 +4,7 @@ theme: default
 paginate: true
 size: 16:9
 title: "REPLACE: Deck title"
-author: "Andreas Drozd"
+author: "<NAME>"
 ---
 
 <!-- _class: lead -->
@@ -13,7 +13,7 @@ author: "Andreas Drozd"
 
 Subtitle or one-line summary
 
-Andreas Drozd · YYYY-MM-DD
+<NAME> · YYYY-MM-DD
 
 ---
 

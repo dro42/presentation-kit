@@ -54,7 +54,7 @@ marp deck.md --pdf --allow-local-files -w
 marp deck.md -s .                     # serve the directory; auto-reloads on edit
 
 # Register custom theme(s) on the fly
-marp deck.md --pdf --theme-set ../themes/hcw.css --allow-local-files
+marp deck.md --pdf --theme-set ../themes/minimal.css --allow-local-files
 
 # Override the theme without changing frontmatter
 marp deck.md --pdf --theme gaia --allow-local-files
@@ -62,14 +62,14 @@ marp deck.md --pdf --theme gaia --allow-local-files
 
 ## marp.config.js — the right way to lock in flags
 
-For decks that always export the same way (thesis decks always need the HCW theme set and allow-local-files), drop a `marp.config.js` next to the deck and skip the flags:
+For decks that always export the same way (e.g. always register a custom theme and allow local files for figures), drop a `marp.config.js` next to the deck and skip the flags:
 
 ```js
 // marp.config.js — place next to your decks (or in the vault Presentations/ root)
 module.exports = {
   // Register custom theme(s). Paths are resolved relative to this config file.
   themeSet: [
-    './themes/hcw.css',
+    './themes/minimal.css',
     // '../shared-themes/another.css',
   ],
 

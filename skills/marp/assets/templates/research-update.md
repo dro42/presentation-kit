@@ -3,10 +3,10 @@ marp: true
 theme: gaia
 paginate: true
 size: 16:9
-header: "BA2 · Status update"
-footer: "Andreas Drozd · YYYY-MM-DD"
+header: "REPLACE: Project · Status update"
+footer: "<NAME> · YYYY-MM-DD"
 title: "REPLACE: Status update — short title"
-author: "Andreas Drozd"
+author: "<NAME>"
 ---
 
 <!-- _class: lead -->
@@ -16,7 +16,7 @@ author: "Andreas Drozd"
 
 Short subtitle if useful
 
-Andreas Drozd · YYYY-MM-DD
+<NAME> · YYYY-MM-DD
 
 <!-- 5-8 slides total. Pace: ~1 minute per slide for a 5-7 min supervisor check-in. -->
 

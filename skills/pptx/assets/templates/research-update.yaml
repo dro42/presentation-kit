@@ -1,0 +1,46 @@
+meta:
+  title: "Research Update — <TOPIC>"
+  author: "<NAME>"
+  aspect_ratio: "16:9"
+
+slides:
+  - layout: title
+    title: "Research Update"
+    subtitle: "<TOPIC> — <NAME> · YYYY-MM-DD"
+
+  - layout: bullets
+    title: "What we tested"
+    bullets:
+      - "Hypothesis under test"
+      - "Setup variation"
+      - "Number of runs"
+
+  - layout: bullets
+    title: "Key result"
+    bullets:
+      - "Headline metric: <number> <unit>"
+      - "Comparison baseline"
+      - "One-line interpretation"
+
+  - layout: bullets
+    title: "Problem / unexpected finding"
+    bullets:
+      - "What we did not expect"
+      - "What we tried to mitigate"
+      - "Whether it changes the experimental design"
+
+  - layout: bullets
+    title: "Next step"
+    bullets:
+      - "Concrete experiment for next iteration"
+      - "Decision needed from supervisor (if any)"
+
+  - layout: bullets
+    title: "Ask / decision needed"
+    bullets:
+      - "Specific question that requires supervisor input"
+      - "Why it can't be decided unilaterally"
+
+  - layout: end
+    title: "Discussion"
+    subtitle: "<EMAIL>"

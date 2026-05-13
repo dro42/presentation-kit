@@ -3,96 +3,96 @@ marp: true
 theme: gaia
 paginate: true
 size: 16:9
-header: "BA2 Defense · Sidecar vs Ambient"
-footer: "Andreas Drozd · FH Campus Wien · YYYY-MM-DD"
-title: "Sidecar vs. Ambient: Telemetry Reliability and Automated Canary Remediation"
-author: "Andreas Drozd"
+header: "<DEFENSE LABEL> · <SHORT TITLE>"
+footer: "<NAME> · <INSTITUTE> · YYYY-MM-DD"
+title: "<FULL THESIS TITLE>"
+author: "<NAME>"
 ---
 
 <!-- _class: lead -->
 <!-- _paginate: false -->
 
-# Sidecar vs. Ambient
+# <FULL THESIS TITLE>
 
-Telemetry Reliability and Automated Canary Remediation in a GitOps-Managed Kubernetes Environment
+<SUBTITLE — one line describing scope or contribution>
 
-**Ing. Andreas Drozd**
-Supervisor: Priv.-Doz. Dr. Karl M. Goeschka
-CSDC · FH Campus Wien · YYYY-MM-DD
+**<NAME>**
+Supervisor: <SUPERVISOR>
+<INSTITUTE> · YYYY-MM-DD
 
 ---
 
 ## Why this thesis
 
-- Service meshes are now standard infrastructure
-- Two paradigms compete: **sidecar** (per-pod proxy) vs **ambient** (shared per-node)
-- Their telemetry is **assumed comparable** — but is it, under canary deployments with fault injection?
+- <One-sentence problem statement>
+- <Two paradigms, two camps, or two competing approaches — frame the tension>
+- <The gap your thesis closes — what is assumed but unverified, or what is missing>
 
-<!-- 90s. Set the stakes: automated canary decisions ride on this telemetry. -->
+<!-- 90s. Set the stakes; do not over-explain context. -->
 
 ---
 
 ## Research questions
 
-- **RQ1 — Decision correctness:** how do false-positive and false-negative rates of automated canary abort decisions differ between modes?
-- **RQ2 — Remediation speed:** how does end-to-end remediation latency compare?
-- **RQ3 — Telemetry fidelity:** what differences in metric completeness, label attribution, and signal stability exist?
+- **RQ1 — <DIMENSION>:** <RQ1 in one sentence>
+- **RQ2 — <DIMENSION>:** <RQ2 in one sentence>
+- **RQ3 — <DIMENSION>:** <RQ3 in one sentence>
 
 ---
 
 ## Experimental setup
 
-![bg right:42%](./figures/REPLACE-cluster-arch.svg)
+![bg right:42%](./figures/REPLACE-architecture.svg)
 
-- k3s on 2× Raspberry Pi 5 (16 GB)
-- Istio **sidecar 1.28** vs **ambient 1.29**
-- podinfo v6.5.4 / v6.6.0 — 90/10 canary split
-- Fault injection via Argo Workflows (HTTP 500 + latency)
+- <Hardware / platform>
+- <Comparator A> vs <Comparator B>
+- <Workload / dataset / fault model>
+- <How the experiment is driven>
 
 ---
 
 ## Methodology
 
-- Single independent variable: mesh mode
-- Clean-state reset between every run (GitOps-controlled mode switch)
-- 10 runs per mode at each fault percentage
-- Timing chain: T0 (fault start) → T1 (alert fires) → T5 (traffic shift complete)
+- Single independent variable: <variable>
+- Clean-state reset between every run
+- <N> runs per condition at each <factor level>
+- Timing chain: <T0> → <T1> → <Tn>
 
 ---
 
-## RQ1: Decision correctness
+## RQ1: <DIMENSION>
 
-![bg right:45%](./figures/REPLACE-rq1-decision-matrix.svg)
+![bg right:45%](./figures/REPLACE-rq1.svg)
 
-- Sidecar: X false positives, Y false negatives
-- Ambient: X' false positives, Y' false negatives
-- **Direction of difference and magnitude in one sentence**
+- <Comparator A>: <number> <unit>
+- <Comparator B>: <number> <unit>
+- **Direction and magnitude in one sentence**
 
 ---
 
-## RQ2: Remediation speed
+## RQ2: <DIMENSION>
 
-![bg right:45%](./figures/REPLACE-rq2-timing-boxplot.svg)
+![bg right:45%](./figures/REPLACE-rq2.svg)
 
-- Median T1−T0 (alert latency): sidecar X s vs ambient Y s
-- Median T5−T0 (full remediation): sidecar X s vs ambient Y s
+- <Comparator A> median: <number> <unit>
+- <Comparator B> median: <number> <unit>
 - **Statistical test** result in one line
 
 ---
 
-## RQ3: Telemetry fidelity
+## RQ3: <DIMENSION>
 
-- Metric completeness: % of expected series present
-- Label attribution: source/destination resolution accuracy
-- Signal stability: variance across runs
-- **Mode-by-mode comparison, one chart**
+- <Sub-metric 1>: <one-line finding>
+- <Sub-metric 2>: <one-line finding>
+- <Sub-metric 3>: <one-line finding>
+- **<Comparator A> vs <Comparator B>, one chart**
 
 ---
 
 ## Discussion
 
-- Where sidecar wins, where ambient wins
-- Threats to validity (cluster scale, hardware homogeneity, fault model)
+- Where <Comparator A> wins, where <Comparator B> wins
+- Threats to validity (<scale>, <hardware homogeneity>, <fault model>)
 - Practical implication: which mode for which workload profile
 
 ---
@@ -102,16 +102,16 @@ CSDC · FH Campus Wien · YYYY-MM-DD
 - RQ1 answer in one sentence
 - RQ2 answer in one sentence
 - RQ3 answer in one sentence
-- Contribution: reproducible GitOps-managed comparison harness
+- **Contribution:** <reproducible artifact / new insight / measurement framework>
 
 ---
 
 ## Future work
 
-- Larger-scale cluster (multi-node ambient)
-- Production traffic patterns vs synthetic
-- L7 policy enforcement comparison
-- eBPF-based meshes (Cilium) as a third arm
+- <Direction 1 — larger scale>
+- <Direction 2 — realistic workloads>
+- <Direction 3 — additional comparator>
+- <Direction 4 — different layer of the stack>
 
 ---
 
@@ -122,8 +122,8 @@ CSDC · FH Campus Wien · YYYY-MM-DD
 
 Questions and discussion
 
-andidrd@gmail.com
-github.com/dro42/sem6_ba2_service_mesh_latex
+<EMAIL>
+<REPO-OR-PROJECT-URL>
 
 ---
 
@@ -135,17 +135,18 @@ For Q&A — methodology details, additional metrics, ablations
 
 ---
 
-## Backup: Alert pipeline
+## Backup: <COMPONENT-A>
 
-![bg right:50%](./figures/REPLACE-alert-pipeline.svg)
+![bg right:50%](./figures/REPLACE-backup-1.svg)
 
-- PrometheusRule → Alertmanager → Argo Events webhook → Sensor → Workflow
-- Why event-driven over polling
+- <Pipeline step 1>
+- <Pipeline step 2>
+- <Why this design choice over the alternative>
 
 ---
 
-## Backup: Mode-switch GitOps flow
+## Backup: <COMPONENT-B>
 
-- ArgoCD app-of-apps pattern
-- `modes/{none,istio-sidecar,istio-ambient}` directories
-- Mean switch time: REPLACE s
+- <Key configuration detail 1>
+- <Key configuration detail 2>
+- <Notable metric: <number> <unit>>

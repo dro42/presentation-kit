@@ -1,0 +1,59 @@
+% Beamer lightning-talk template — 5-minute talk, 4-6 frames max.
+% Shape: hook · the one point · evidence · takeaway · thanks.
+% Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\documentclass[aspectratio=169,12pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+
+\title{<LIGHTNING TALK TITLE>}
+\subtitle{<ONE-SENTENCE HOOK>}
+\author{<NAME>}
+\institute{<ORG>}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+  \note{5 minutes. Rehearse with a timer.}
+\end{frame}
+
+\begin{frame}{The one point}
+  \vfill
+  \begin{quote}
+    \Large <The single claim this talk exists to make. Make it specific and contestable.>
+  \end{quote}
+  \vfill
+  \note{Just the claim --- no bullets.}
+\end{frame}
+
+\begin{frame}{Evidence}
+  \begin{center}
+    % \includegraphics[width=0.85\textwidth]{figures/REPLACE-evidence}
+    \fbox{\rule{0pt}{5cm}\rule{0.85\textwidth}{0pt}}\\
+    \footnotesize ONE chart, snippet, or demo --- never two
+  \end{center}
+\end{frame}
+
+\begin{frame}{Takeaway}
+  \begin{itemize}
+    \item \textbf{<ACTION>} --- what should the audience do Monday morning?
+    \item \textbf{<LINK>} --- where do they go to learn more?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]{Thanks}
+  \vfill
+  \centering
+  \Large <EMAIL>
+  \vfill
+\end{frame}
+
+\end{document}

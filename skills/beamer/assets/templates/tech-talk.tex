@@ -1,0 +1,221 @@
+% Beamer tech-talk template — engineering talk (~30 min, ~20 frames + backup).
+% Shape: hook · problem · constraints · prior art · design · implementation · demo · results · lessons · future.
+% Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\documentclass[aspectratio=169,12pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\usetheme{Minimal}
+\setbeamertemplate{navigation symbols}{}
+
+\title[<SHORT TITLE>]{<TALK TITLE>}
+\subtitle{<SUBTITLE: clarify scope or hook>}
+\author[<SHORT-NAME>]{<NAME>}
+\institute[<ORG>]{<ROLE> @ <ORG>\\<VENUE>}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{The hook}
+  \vfill
+  \begin{quote}
+    \Large <The war story, the surprising number, the "wait what" moment that frames the talk>
+  \end{quote}
+  \vfill
+  \note{60s. Visual > bullets here.}
+\end{frame}
+
+\begin{frame}{The problem}
+  \begin{itemize}
+    \item <One-sentence problem statement>
+    \item <Why it matters --- who feels the pain, how often, how bad>
+    \item <Why it's hard --- the constraint that rules out the obvious solution>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Why this is hard}
+  \begin{itemize}
+    \item \textbf{<CONSTRAINT 1>} --- one-line explanation
+    \item \textbf{<CONSTRAINT 2>} --- one-line explanation
+    \item \textbf{<CONSTRAINT 3>} --- one-line explanation
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Prior art}
+  \begin{itemize}
+    \item \textbf{<APPROACH A>} --- what it does well, what it doesn't
+    \item \textbf{<APPROACH B>} --- what it does well, what it doesn't
+    \item \textbf{<APPROACH C>} --- what it does well, what it doesn't
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Our approach (high level)}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item <One-sentence headline>
+        \item <Key design decision 1>
+        \item <Key design decision 2>
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      % \includegraphics[width=\textwidth]{figures/REPLACE-architecture}
+      \fbox{\rule{0pt}{4.5cm}\rule{\textwidth}{0pt}}
+      \begin{center}\footnotesize REPLACE-architecture\end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Design deep-dive: <COMPONENT 1>}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Inputs / outputs
+        \item The interesting bit --- the algorithm or data structure
+        \item Why it's correct or why it scales
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \fbox{\rule{0pt}{4.5cm}\rule{\textwidth}{0pt}}
+      \begin{center}\footnotesize REPLACE-component-1\end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Design deep-dive: <COMPONENT 2>}
+  \begin{itemize}
+    \item Inputs / outputs
+    \item The trade-off we made and why
+    \item The thing we discovered while building this
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Implementation notes}
+  \begin{itemize}
+    \item \textbf{Language / runtime:} <choice and why>
+    \item \textbf{Built vs reused:} <what we wrote, what we leveraged>
+    \item \textbf{Operational surface:} <how it's deployed, scaled, observed>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Live demo}
+  \begin{center}
+    % \includegraphics[width=0.85\textwidth]{figures/REPLACE-demo}
+    \fbox{\rule{0pt}{5cm}\rule{0.85\textwidth}{0pt}}\\
+    \footnotesize Live demo or asciinema GIF (REPLACE-demo.gif)
+  \end{center}
+  \note{3-5 minutes. Second-most memorable thing after the hook.}
+\end{frame}
+
+\begin{frame}{Results: <HEADLINE METRIC>}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Finding}
+        \textbf{<NUMBER> <UNIT>} --- vs.\ <BASELINE> at <FACTOR>$\times$
+      \end{block}
+      \begin{itemize}
+        \item Test conditions: <briefly>
+        \item Statistical significance: <one line>
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \fbox{\rule{0pt}{4.5cm}\rule{\textwidth}{0pt}}
+      \begin{center}\footnotesize REPLACE-headline-metric\end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Results: <SUPPORTING METRIC>}
+  \begin{itemize}
+    \item <Sub-metric 1>: <number>
+    \item <Sub-metric 2>: <number>
+    \item <Caveat / scope of validity>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{What we got wrong}
+  \begin{itemize}
+    \item \textbf{<MISTAKE 1>} --- what we thought, what actually happened, what we changed
+    \item \textbf{<MISTAKE 2>} --- same shape
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Lessons learned}
+  \begin{itemize}
+    \item <LESSON 1 --- generalizable beyond this project>
+    \item <LESSON 2 --- generalizable beyond this project>
+    \item <LESSON 3 --- generalizable beyond this project>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Future directions}
+  \begin{itemize}
+    \item <DIRECTION 1>
+    \item <DIRECTION 2>
+    \item <DIRECTION 3>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Resources}
+  \begin{itemize}
+    \item \textbf{Code:} \url{<URL>}
+    \item \textbf{Paper / writeup:} \url{<URL>}
+    \item \textbf{Slides:} \url{<URL>}
+    \item \textbf{Contact:} <EMAIL> $\cdot$ <SOCIAL HANDLE>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]{Questions?}
+  \vfill
+  \centering
+  \Large <EMAIL>
+  \vfill
+\end{frame}
+
+% ─── Backup section ─────────────────────────────────────────────────────────
+\appendix
+
+\section*{Backup}
+
+\begin{frame}[plain]{Backup slides}
+  \vfill
+  \centering
+  \Large For Q\&A --- alternative designs, benchmarks, FAQ
+  \vfill
+\end{frame}
+
+\begin{frame}{Backup: alternative design considered}
+  \begin{itemize}
+    \item What we considered
+    \item Why we didn't pick it
+    \item Conditions under which it would win
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Backup: detailed benchmarks}
+  \begin{itemize}
+    \item Workload A: <numbers>
+    \item Workload B: <numbers>
+    \item Workload C: <numbers>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Backup: FAQ}
+  \begin{quote}
+    <Anticipated question>
+  \end{quote}
+  <One-paragraph answer>
+\end{frame}
+
+\end{document}

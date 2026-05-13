@@ -1,0 +1,38 @@
+<!--
+reveal.js embed: asciinema-player web component inside a slide section.
+
+PREREQUISITES (one-time setup per reveal.js deck):
+
+  In the deck's <head>:
+
+    <script src="https://cdn.jsdelivr.net/npm/asciinema-player@3.7.1/dist/bundle/asciinema-player.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asciinema-player@3.7.1/dist/bundle/asciinema-player.css" />
+
+Then place demo.cast next to the deck HTML (or under a media/ folder).
+-->
+
+<section>
+  <h2>Live terminal demo</h2>
+
+  <asciinema-player
+    src="demo.cast"
+    cols="100"
+    rows="30"
+    autoplay="false"
+    loop="true"
+    theme="monokai">
+  </asciinema-player>
+
+  <p class="fragment">Narration: see speaker notes.</p>
+
+  <aside class="notes">
+    Read narration.md timestamps as the cast plays.
+    Fallback if the cast fails: describe each step from the script.
+  </aside>
+</section>
+
+<!--
+reveal.js PDF export (`?print-pdf`) renders the JS but captures only one
+frame. For PDF handouts, also embed a static GIF on the same slide and
+hide one based on the print-pdf URL parameter.
+-->

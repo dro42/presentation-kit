@@ -1,7 +1,7 @@
 {
   "name": "presentation-kit",
-  "version": "0.1.0",
-  "description": "Slash-command driven presentation toolkit for Claude Code. Author and build Marp and LaTeX Beamer decks with bundled templates, a builder subagent for long renders, and a user-extensible theme system.",
+  "version": "0.2.0",
+  "description": "Slash-command driven presentation toolkit for Claude Code. Author and build decks across Marp, LaTeX Beamer, Slidev, PowerPoint (via python-pptx), and asciinema terminal demos. Bundled templates for thesis defenses, sprint reviews, tech talks, kickoffs, and more. AI-agnostic skills also installable into Codex CLI and Gemini CLI via per-skill .skill bundles.",
   "author": {
     "name": "Andreas Drozd",
     "email": "andidrd@gmail.com",
@@ -10,9 +10,21 @@
   "homepage": "https://github.com/dro42/presentation-kit",
   "repository": "https://github.com/dro42/presentation-kit",
   "license": "MIT",
-  "keywords": ["presentation", "slides", "marp", "beamer", "latex", "thesis", "deck"],
-  "commands": ["./commands/marp.md", "./commands/beamer.md"],
+  "keywords": ["presentation", "slides", "marp", "beamer", "latex", "slidev", "pptx", "powerpoint", "asciinema", "thesis", "deck", "sprint-review", "tech-talk"],
+  "commands": [
+    "./commands/marp.md",
+    "./commands/beamer.md",
+    "./commands/slidev.md",
+    "./commands/pptx.md",
+    "./commands/asciinema.md"
+  ],
   "agents": ["./agents/presentation-builder.md"],
-  "skills": ["./skills/marp/SKILL.md", "./skills/beamer/SKILL.md"],
+  "skills": [
+    "./skills/marp/SKILL.md",
+    "./skills/beamer/SKILL.md",
+    "./skills/slidev/SKILL.md",
+    "./skills/pptx/SKILL.md",
+    "./skills/asciinema/SKILL.md"
+  ],
   "hooks": "./hooks/hooks.json"
 }

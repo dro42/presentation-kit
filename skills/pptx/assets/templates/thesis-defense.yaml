@@ -1,0 +1,104 @@
+meta:
+  title: "<FULL THESIS TITLE>"
+  author: "<NAME>"
+  aspect_ratio: "16:9"
+
+slides:
+  - layout: title
+    title: "<FULL THESIS TITLE>"
+    subtitle: "<SUBTITLE: one line describing scope or contribution>"
+
+  - layout: bullets
+    title: "Why this thesis"
+    bullets:
+      - "<One-sentence problem statement>"
+      - "<The two paradigms / camps / approaches in tension>"
+      - "<The gap your thesis closes>"
+    notes: "90s. Set the stakes."
+
+  - layout: bullets
+    title: "Research questions"
+    bullets:
+      - "RQ1 — <DIMENSION>: <RQ1 in one sentence>"
+      - "RQ2 — <DIMENSION>: <RQ2 in one sentence>"
+      - "RQ3 — <DIMENSION>: <RQ3 in one sentence>"
+
+  - layout: bullets
+    title: "Experimental setup"
+    bullets:
+      - "<Hardware / platform>"
+      - "<Comparator A> vs <Comparator B>"
+      - "<Workload / dataset / fault model>"
+      - "<How the experiment is driven>"
+
+  - layout: bullets
+    title: "Methodology"
+    bullets:
+      - "Single independent variable: <variable>"
+      - "Clean-state reset between every run"
+      - "<N> runs per condition at each <factor level>"
+      - "Timing chain: T0 → T1 → Tn"
+
+  - layout: bullets
+    title: "RQ1: <DIMENSION>"
+    bullets:
+      - "<Comparator A>: <number> <unit>"
+      - "<Comparator B>: <number> <unit>"
+      - "Direction of difference and magnitude in one sentence"
+
+  - layout: bullets
+    title: "RQ2: <DIMENSION>"
+    bullets:
+      - "<Comparator A> median: <number> <unit>"
+      - "<Comparator B> median: <number> <unit>"
+      - "Statistical test result in one line"
+
+  - layout: bullets
+    title: "RQ3: <DIMENSION>"
+    bullets:
+      - "<Sub-metric 1>: <one-line finding>"
+      - "<Sub-metric 2>: <one-line finding>"
+      - "<Sub-metric 3>: <one-line finding>"
+
+  - layout: bullets
+    title: "Discussion"
+    bullets:
+      - "Where <Comparator A> wins, where <Comparator B> wins"
+      - "Threats to validity"
+      - "Practical implication: which mode for which workload"
+
+  - layout: bullets
+    title: "Conclusion"
+    bullets:
+      - "RQ1 answer in one sentence"
+      - "RQ2 answer in one sentence"
+      - "RQ3 answer in one sentence"
+      - "Contribution: <reproducible artifact / new insight>"
+
+  - layout: bullets
+    title: "Future work"
+    bullets:
+      - "<Direction 1>"
+      - "<Direction 2>"
+      - "<Direction 3>"
+
+  - layout: end
+    title: "Thank you"
+    subtitle: "<EMAIL>"
+
+  - layout: section
+    title: "Backup"
+
+  - layout: bullets
+    title: "Backup: <COMPONENT-A>"
+    bullets:
+      - "<Pipeline step 1>"
+      - "<Pipeline step 2>"
+      - "<Why this design choice over the alternative>"
+
+  - layout: bullets
+    title: "Backup: <COMPONENT-B>"
+    bullets:
+      - "<Key configuration detail 1>"
+      - "<Key configuration detail 2>"
+      - "<Notable metric>"

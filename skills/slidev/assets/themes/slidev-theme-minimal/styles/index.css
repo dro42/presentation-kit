@@ -1,0 +1,124 @@
+/*
+ * slidev-theme-minimal — visual identity tokens.
+ *
+ * Override the brand-* custom properties to match your institution or
+ * company. The token names mirror the marp minimal.css and Beamer
+ * beamerthemeMinimal.sty companion themes so all three formats can
+ * share one source of brand truth.
+ */
+
+:root {
+  /* Brand color tokens (override these) */
+  --brand-primary:   #1f3a8a;
+  --brand-secondary: #6b7280;
+  --brand-accent:    #b21f1f;
+
+  /* Surface tokens */
+  --brand-bg:        #ffffff;
+  --brand-text:      #1a1a1a;
+  --brand-muted:     #6b7280;
+  --brand-rule:      #e5e7eb;
+  --brand-code-bg:   #f5f5f5;
+}
+
+html.dark, html[data-color-schema="dark"] {
+  --brand-bg:        #1a1a1a;
+  --brand-text:      #e6e6e6;
+  --brand-muted:     #9ca3af;
+  --brand-rule:      #374151;
+  --brand-code-bg:   #2a2a2a;
+}
+
+/* ─── Slide canvas ──────────────────────────────────────────────────── */
+
+.slidev-layout {
+  background: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: var(--slidev-default-fontSans, Inter, system-ui, sans-serif);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+.slidev-layout h1 { font-size: 2.6em; line-height: 1.1; }
+.slidev-layout h2 { font-size: 1.6em; line-height: 1.2; }
+.slidev-layout h3 { font-size: 1.2em; color: var(--brand-secondary); }
+
+.slidev-layout a       { color: var(--brand-accent); }
+.slidev-layout strong  { color: var(--brand-primary); }
+.slidev-layout code    {
+  background: var(--brand-code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+.slidev-layout pre {
+  background: var(--brand-code-bg);
+  border-left: 3px solid var(--brand-primary);
+  padding: 0.6em 0.9em;
+}
+.slidev-layout hr {
+  border: none;
+  border-top: 1px solid var(--brand-rule);
+}
+
+.slidev-layout blockquote {
+  border-left: 4px solid var(--brand-secondary);
+  color: var(--brand-muted);
+  padding-left: 1em;
+  margin-left: 0;
+}
+
+.slidev-layout table {
+  border-collapse: collapse;
+}
+.slidev-layout th,
+.slidev-layout td {
+  border-bottom: 1px solid var(--brand-rule);
+  padding: 0.4em 0.8em;
+}
+.slidev-layout th {
+  color: var(--brand-primary);
+  border-bottom: 2px solid var(--brand-primary);
+}
+
+/* ─── Cover layout (title slide) ────────────────────────────────────── */
+
+.slidev-layout.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slidev-layout.cover h1 {
+  font-size: 2.8em;
+  margin-bottom: 0.4em;
+}
+
+.slidev-layout.cover h2 {
+  color: var(--brand-secondary);
+  font-size: 1.2em;
+}
+
+/* ─── Section divider ───────────────────────────────────────────────── */
+
+.slidev-layout.section {
+  background: var(--brand-primary);
+  color: #ffffff;
+}
+
+.slidev-layout.section h1 {
+  color: #ffffff;
+}
+
+/* ─── Slide number / pagination ─────────────────────────────────────── */
+
+.slidev-page::after {
+  color: var(--brand-muted);
+  font-size: 0.6em;
+}

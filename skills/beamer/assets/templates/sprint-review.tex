@@ -1,0 +1,105 @@
+% Beamer sprint-review template — agile sprint review/demo (~10-15 min, 8-12 frames).
+% Shape: goal · shipped · demo · metrics · slipped · retro · next sprint · asks.
+% Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\documentclass[aspectratio=169,12pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\usetheme{Minimal}                     % requires beamerthemeMinimal.sty on TEXINPUTS
+\setbeamertemplate{navigation symbols}{}
+
+\title[Sprint <N> Review]{Sprint <N> Review}
+\subtitle{<DATE-RANGE>}
+\author[<SHORT-NAME>]{<NAME>}
+\institute[<TEAM>]{<TEAM> $\cdot$ <PRODUCT-AREA>}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Sprint goal}
+  \begin{quote}
+    <One-sentence goal as committed at sprint start>
+  \end{quote}
+  \textbf{Met?} \checkmark{} / partial / not met --- and one sentence why.
+\end{frame}
+
+\begin{frame}{What we shipped}
+  \begin{itemize}
+    \item \textbf{<FEATURE / FIX 1>} --- one-line value statement
+    \item \textbf{<FEATURE / FIX 2>} --- one-line value statement
+    \item \textbf{<FEATURE / FIX 3>} --- one-line value statement
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Demo}
+  \begin{center}
+    % \includegraphics[width=0.85\textwidth]{figures/REPLACE-demo}
+    \fbox{\rule{0pt}{5cm}\rule{0.85\textwidth}{0pt}}\\
+    \footnotesize Live demo or asciinema GIF (REPLACE-demo.gif)
+  \end{center}
+  \note{2-3 minutes. Show, don't list.}
+\end{frame}
+
+\begin{frame}{Metrics}
+  \begin{tabular}{lrrr}
+    \toprule
+    Metric & Last sprint & This sprint & $\Delta$ \\
+    \midrule
+    <Velocity / story points> & <N> & <N> & <$\pm$> \\
+    <Defects opened> & <N> & <N> & <$\pm$> \\
+    <P0 incidents> & <N> & <N> & <$\pm$> \\
+    <Other> & <N> & <N> & <$\pm$> \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{What slipped \& why}
+  \begin{itemize}
+    \item \textbf{<COMMITTED ITEM>} --- slipped because: <root cause>. Plan: <next sprint or descope>.
+    \item \textbf{<COMMITTED ITEM>} --- slipped because: <root cause>. Plan: <action>.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Retro headlines}
+  \begin{itemize}
+    \item \textbf{Start:} <one practice we should adopt>
+    \item \textbf{Stop:} <one practice that's costing us>
+    \item \textbf{Continue:} <one practice that's working>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Next sprint commitment}
+  \begin{itemize}
+    \item <ITEM 1> --- owner: <NAME>
+    \item <ITEM 2> --- owner: <NAME>
+    \item <ITEM 3> --- owner: <NAME>
+  \end{itemize}
+  \vspace{0.5em}
+  \textbf{Sprint goal:} <one-sentence goal for the upcoming sprint>
+\end{frame}
+
+\begin{frame}{Asks / blockers}
+  \begin{itemize}
+    \item \textbf{<ASK 1>} --- what we need from <stakeholder>, by when
+    \item \textbf{<BLOCKER 1>} --- what's blocked, who can unblock
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]{Q\&A}
+  \vfill
+  \centering
+  \Large Questions\\[1em]
+  \normalsize <EMAIL>
+  \vfill
+\end{frame}
+
+\end{document}

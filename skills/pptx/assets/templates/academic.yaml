@@ -1,0 +1,63 @@
+meta:
+  title: "<FULL TALK TITLE>"
+  author: "<NAME>"
+  aspect_ratio: "16:9"
+
+slides:
+  - layout: title
+    title: "<FULL TALK TITLE>"
+    subtitle: "<SUBTITLE clarifying scope>"
+
+  - layout: section
+    title: "Motivation"
+
+  - layout: bullets
+    title: "Why this work"
+    bullets:
+      - "Concrete problem in one sentence"
+      - "Why existing approaches fall short"
+      - "What this work contributes"
+    notes: "60s. Set the stakes; do not over-explain context."
+
+  - layout: section
+    title: "Method"
+
+  - layout: two_column
+    title: "Approach"
+    left:
+      bullets:
+        - "Independent variable"
+        - "Controlled variables"
+        - "Measurement protocol"
+    right:
+      text: "REPLACE-architecture (drop image when ready)"
+
+  - layout: section
+    title: "Results"
+
+  - layout: bullets
+    title: "Headline result"
+    bullets:
+      - "Specific metric, specific number"
+      - "Comparison baseline"
+      - "One-line interpretation"
+
+  - layout: bullets
+    title: "Supporting result"
+    bullets:
+      - "Specific metric, specific number"
+      - "Why it matters"
+
+  - layout: section
+    title: "Conclusion"
+
+  - layout: bullets
+    title: "Takeaway"
+    bullets:
+      - "What we showed"
+      - "Why it matters"
+      - "What comes next"
+
+  - layout: end
+    title: "Questions?"
+    subtitle: "<EMAIL>"

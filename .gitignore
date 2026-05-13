@@ -30,3 +30,10 @@ build/
 
 # Marp local cache
 .marprc
+
+# Python
+__pycache__/
+*.pyc
+
+# Skill bundle output (rebuilt on demand via scripts/build-skill-bundles.sh)
+dist/

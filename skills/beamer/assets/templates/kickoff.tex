@@ -1,0 +1,173 @@
+% Beamer kickoff template — project kickoff (~20 min, 10-14 frames).
+% Shape: why now · problem · goals · non-goals · scope · solution · timeline ·
+%        team · dependencies · risks · success · comms · decisions.
+% Compile: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+\documentclass[aspectratio=169,12pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\usetheme{Minimal}
+\setbeamertemplate{navigation symbols}{}
+
+\title{<PROJECT NAME>}
+\subtitle{Project Kickoff}
+\author{<NAME>}
+\institute{Sponsor: <SPONSOR-NAME>}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Why now}
+  \begin{itemize}
+    \item <The trigger --- a deadline, an incident, a regulation, an opportunity>
+    \item <Why this couldn't wait>
+    \item <What changes if we don't act>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The problem we're solving}
+  \begin{quote}
+    <One-paragraph problem statement, user-or-business framed>
+  \end{quote}
+  \begin{itemize}
+    \item Who feels the pain: <segment>
+    \item How often: <frequency / scale>
+    \item Current workaround / cost: <one line>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Goals (measurable)}
+  \begin{itemize}
+    \item \textbf{<GOAL 1>} --- measured as <metric>, target <number> by <date>
+    \item \textbf{<GOAL 2>} --- measured as <metric>, target <number> by <date>
+    \item \textbf{<GOAL 3>} --- measured as <metric>, target <number> by <date>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Non-goals}
+  \begin{itemize}
+    \item \textbf{<NON-GOAL 1>} --- explicitly out of scope; <one-line why>
+    \item \textbf{<NON-GOAL 2>} --- explicitly out of scope; <one-line why>
+    \item \textbf{<NON-GOAL 3>} --- explicitly out of scope; <one-line why>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Scope matrix}
+  \begin{tabular}{lllll}
+    \toprule
+    Area & In scope & Out of scope & Deferred \\
+    \midrule
+    <DOMAIN A> & <...> & <...> & <...> \\
+    <DOMAIN B> & <...> & <...> & <...> \\
+    <DOMAIN C> & <...> & <...> & <...> \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Solution sketch}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+        \item <Approach in one sentence>
+        \item <Key decision 1>
+        \item <Key decision 2>
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \fbox{\rule{0pt}{4.5cm}\rule{\textwidth}{0pt}}
+      \begin{center}\footnotesize REPLACE-solution-sketch\end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Timeline \& milestones}
+  \begin{tabular}{lll}
+    \toprule
+    Milestone & Target & Owner \\
+    \midrule
+    M1: Discovery complete & <YYYY-MM-DD> & <NAME> \\
+    M2: Design sign-off & <YYYY-MM-DD> & <NAME> \\
+    M3: MVP / Alpha & <YYYY-MM-DD> & <NAME> \\
+    M4: Beta / Pilot & <YYYY-MM-DD> & <NAME> \\
+    M5: GA / Launch & <YYYY-MM-DD> & <NAME> \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Team \& stakeholders}
+  \begin{tabular}{lll}
+    \toprule
+    Person & Role & RACI \\
+    \midrule
+    <NAME> & Lead & R, A \\
+    <NAME> & Eng & R \\
+    <NAME> & Design & C \\
+    <NAME> & Sponsor & A \\
+    <NAME> & Stakeholder & I \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Dependencies}
+  \begin{itemize}
+    \item \textbf{<EXTERNAL DEPENDENCY 1>} --- owner, status, our risk if it slips
+    \item \textbf{<EXTERNAL DEPENDENCY 2>} --- owner, status, our risk if it slips
+    \item \textbf{<INTERNAL DEPENDENCY>} --- owner, status
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Top risks \& mitigations}
+  \begin{tabular}{llll}
+    \toprule
+    Risk & Likelihood & Impact & Mitigation \\
+    \midrule
+    <RISK 1> & H/M/L & H/M/L & <one line> \\
+    <RISK 2> & H/M/L & H/M/L & <one line> \\
+    <RISK 3> & H/M/L & H/M/L & <one line> \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Success criteria \& measurement}
+  \begin{itemize}
+    \item \textbf{Definition of done:} <one sentence>
+    \item \textbf{How we measure:} <metric, source, cadence>
+    \item \textbf{Where the dashboard lives:} <link or location>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Communication plan}
+  \begin{itemize}
+    \item \textbf{Standup:} <cadence> at <time>, <channel>
+    \item \textbf{Demo / status:} <cadence>, <audience>
+    \item \textbf{Decision log:} <where>
+    \item \textbf{Escalation path:} <who, when>
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Decisions needed today}
+  \begin{itemize}
+    \item \textbf{<DECISION 1>:} <option A> vs.\ <option B> --- recommend <pick>
+    \item \textbf{<DECISION 2>:} <question>
+    \item \textbf{<DECISION 3>:} <question>
+  \end{itemize}
+  \note{Kickoff ends when these decisions are made.}
+\end{frame}
+
+\begin{frame}[plain]{Questions \& decisions}
+  \vfill
+  \centering
+  \Large <EMAIL>
+  \vfill
+\end{frame}
+
+\end{document}

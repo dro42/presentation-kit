@@ -1,0 +1,29 @@
+meta:
+  title: "<DECK TITLE>"
+  author: "<NAME>"
+  aspect_ratio: "16:9"
+
+slides:
+  - layout: title
+    title: "<DECK TITLE>"
+    subtitle: "<SUBTITLE or one-line summary>"
+    notes: "Open strongly. Set context in 30 seconds."
+
+  - layout: bullets
+    title: "<REPLACE: Section heading>"
+    bullets:
+      - "Key point one"
+      - "Key point two"
+      - "Key point three"
+    notes: "Expand on key point two — that's where the audience usually has questions."
+
+  - layout: bullets
+    title: "<REPLACE: Next section>"
+    bullets:
+      - "Bullet"
+      - "Bullet"
+      - "Bullet"
+
+  - layout: end
+    title: "Thank you"
+    subtitle: "Questions?"

@@ -1,0 +1,108 @@
+% beamerthemeMinimal.sty — Minimal starter theme for Beamer.
+%
+% Token-driven extension of Madrid: brand-specific values live in macros at
+% the top of the file so the visual identity can be confirmed once and
+% propagate to every deck that uses \usetheme{Minimal}.
+%
+% To activate this theme:
+%   1. Place this file next to your main .tex, or on TEXINPUTS.
+%   2. In the preamble:   \usetheme{Minimal}
+%
+% Use this as a starting point for your own branded theme. Save customized
+% copies via:
+%
+%   bash scripts/save-theme.sh beamer <name> ./beamertheme<Name>.sty
+%
+% The colour tokens mirror the marp `minimal.css` companion theme so
+% Markdown and Beamer decks can share one source of brand truth.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeMinimal}[2026/05/13 v0.2 Minimal starter theme for Beamer]
+
+\RequirePackage{xcolor}
+\RequirePackage{etoolbox}
+
+% ─── Brand colour tokens (override with your own values) ─────────────────────
+\definecolor{BrandPrimary}{HTML}{1F3A8A}
+\definecolor{BrandSecondary}{HTML}{6B7280}
+\definecolor{BrandAccent}{HTML}{B21F1F}
+\definecolor{BrandMuted}{HTML}{6B7280}
+\definecolor{BrandRule}{HTML}{E5E7EB}
+\definecolor{BrandCodeBg}{HTML}{F5F5F5}
+
+% ─── Footer text (override per project) ──────────────────────────────────────
+\providecommand{\MinimalFooterText}{}
+
+% ─── Inherit Madrid's outer layout, then override the colour palette ─────────
+\useoutertheme{miniframes}
+\useinnertheme{rounded}
+
+\setbeamercolor{palette primary}{fg=white,bg=BrandPrimary}
+\setbeamercolor{palette secondary}{fg=white,bg=BrandPrimary!85}
+\setbeamercolor{palette tertiary}{fg=white,bg=BrandPrimary!70}
+\setbeamercolor{palette quaternary}{fg=white,bg=BrandPrimary}
+
+\setbeamercolor{structure}{fg=BrandPrimary}
+\setbeamercolor{title}{fg=BrandPrimary}
+\setbeamercolor{subtitle}{fg=BrandSecondary}
+\setbeamercolor{author}{fg=black}
+\setbeamercolor{institute}{fg=BrandSecondary}
+\setbeamercolor{date}{fg=BrandSecondary}
+
+\setbeamercolor{frametitle}{fg=white,bg=BrandPrimary}
+\setbeamercolor{section in head/foot}{fg=white,bg=BrandPrimary}
+\setbeamercolor{subsection in head/foot}{fg=white,bg=BrandPrimary!85}
+\setbeamercolor{author in head/foot}{fg=white,bg=BrandPrimary}
+\setbeamercolor{title in head/foot}{fg=white,bg=BrandPrimary}
+\setbeamercolor{date in head/foot}{fg=white,bg=BrandPrimary}
+
+\setbeamercolor{block title}{fg=white,bg=BrandPrimary}
+\setbeamercolor{block body}{fg=black,bg=BrandPrimary!5}
+\setbeamercolor{block title alerted}{fg=white,bg=BrandAccent}
+\setbeamercolor{block body alerted}{fg=black,bg=BrandAccent!8}
+\setbeamercolor{block title example}{fg=white,bg=BrandSecondary}
+\setbeamercolor{block body example}{fg=black,bg=BrandSecondary!8}
+
+\setbeamercolor{itemize item}{fg=BrandPrimary}
+\setbeamercolor{itemize subitem}{fg=BrandSecondary}
+\setbeamercolor{enumerate item}{fg=BrandPrimary}
+\setbeamercolor{alerted text}{fg=BrandAccent}
+
+% ─── Typography ──────────────────────────────────────────────────────────────
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{subtitle}{series=\mdseries,size=\large}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{footline}{size=\tiny}
+
+% ─── Frame title bar ─────────────────────────────────────────────────────────
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.6ex,dp=1.0ex,leftskip=0.6cm,rightskip=0.6cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+}
+
+% ─── Custom footline: author · footer text · page n/N ────────────────────────
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+      \usebeamerfont{footline}\insertshortauthor%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+      \usebeamerfont{footline}\MinimalFooterText%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.32\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+      \usebeamerfont{footline}\insertframenumber\,/\,\inserttotalframenumber%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{itemize item}{\color{BrandPrimary}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{BrandSecondary}$\blacktriangleright$}
+
+\endinput
