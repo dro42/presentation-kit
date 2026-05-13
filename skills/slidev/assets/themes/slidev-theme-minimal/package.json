@@ -1,0 +1,21 @@
+{
+  "name": "slidev-theme-minimal",
+  "version": "0.2.0",
+  "description": "Minimal starter theme for Slidev — token-driven brand colors mirroring the marp minimal.css and Beamer beamerthemeMinimal.sty companions.",
+  "keywords": ["slidev-theme", "presentation", "slidev"],
+  "license": "MIT",
+  "slidev": {
+    "defaults": {
+      "aspectRatio": "16/9",
+      "canvasWidth": 980,
+      "colorSchema": "auto",
+      "fonts": {
+        "sans": "Inter, system-ui, sans-serif",
+        "serif": "Iowan Old Style, Georgia, serif",
+        "mono": "JetBrains Mono, ui-monospace, Menlo, monospace"
+      },
+      "highlighter": "shiki",
+      "transition": "slide-left"
+    }
+  }
+}
