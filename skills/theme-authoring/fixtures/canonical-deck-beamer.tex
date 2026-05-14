@@ -1,0 +1,93 @@
+% Canonical 6-slide Beamer fixture for the theme-authoring smoke test.
+%
+% Mirrors fixtures/canonical-deck-marp.md — same six slides exercise the
+% same brand surfaces (h1/h2, bullets, section divider, code block, table,
+% inverted closing).
+%
+% Build:
+%   cp <generated>/beamer/beamerthemeHcw.sty <here>/
+%   cp <generated>/beamer/hcw-logo.{png,pdf} <here>/  # raster sibling for pdfLaTeX
+%   latexmk -pdf canonical-deck-beamer.tex
+%
+% The deck assumes the generated theme is placed next to this .tex.
+\documentclass[11pt,aspectratio=169]{beamer}
+\usetheme{Hcw}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{Generated theme test}
+\subtitle{Verifying brand projection}
+\author{Andreas Drozd}
+\date{14 May 2026}
+
+\begin{document}
+
+% ── Slide 1: title (lead variant) ─────────────────────────────────────────
+\begin{frame}[plain,noframenumbering]
+  \titlepage
+\end{frame}
+
+% ── Slide 2: bullets and emphasis ────────────────────────────────────────
+\begin{frame}{Bullets and emphasis}
+  The 6-slide canonical deck exercises every variant the generator emits:
+  \begin{itemize}
+    \item Title slide (lead variant)
+    \item Section divider (invert variant)
+    \item Bullet body
+    \item Code block
+    \item Table
+    \item Inverted closing slide
+  \end{itemize}
+  Use \emph{italic} for emphasis, \textbf{bold} for terms, and \texttt{inline code} for identifiers.
+\end{frame}
+
+% ── Slide 3: section divider (invert variant) ────────────────────────────
+% \section{} triggers the AtBeginSection divider page configured by the theme.
+\section{Visual surface}
+
+% ── Slide 4: code block ──────────────────────────────────────────────────
+\begin{frame}[fragile]{Code block}
+\begin{lstlisting}[language=,basicstyle=\ttfamily\small,backgroundcolor=\color{BrandBgAlt},frame=leftline,rulecolor=\color{BrandPrimary},framerule=2pt,xleftmargin=1em]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: theme-authoring-test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test
+\end{lstlisting}
+  Note the brand-color inline \texttt{code} and the brand-color left rule on the block.
+\end{frame}
+
+% ── Slide 5: table ───────────────────────────────────────────────────────
+\begin{frame}{Tables}
+  \begin{tabular}{lll}
+    \hline
+    \textbf{\color{BrandPrimary}Token} & \textbf{\color{BrandPrimary}Value} & \textbf{\color{BrandPrimary}Where it lives} \\
+    \hline
+    primary       & \texttt{\#36566D} & h1, brand surfaces, code rule \\
+    secondary     & \texttt{\#4B5059} & h2, body emphasis             \\
+    primary\_soft & \texttt{\#7897AC} & h3, subtitles                 \\
+    \hline
+  \end{tabular}
+
+  \vspace{1em}
+  Header rows carry the brand-primary underline.
+\end{frame}
+
+% ── Slide 6: inverted closing slide ──────────────────────────────────────
+% Beamer doesn't have a built-in "invert" body slide; we approximate with
+% a beamercolorbox spanning the frame.
+\begin{frame}[plain,noframenumbering]
+  \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight,center,sep=2em]{palette primary}
+    \usebeamerfont{title}Thank you.\\[0.5em]
+    \usebeamerfont{subtitle}\small Generated from \texttt{hcw-brand.yaml} via \texttt{/new-theme}.
+  \end{beamercolorbox}
+\end{frame}
+
+\end{document}

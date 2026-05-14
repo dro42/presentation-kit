@@ -1,0 +1,95 @@
+# Canonical 6-slide pptx fixture for the theme-authoring smoke test.
+#
+# Mirrors fixtures/canonical-deck-marp.md — same six slides exercise the
+# same brand surfaces (h1/h2, bullets, section divider, code block, table,
+# inverted closing).
+#
+# Schema is the deck-yaml format consumed by skills/pptx/scripts/generate.py.
+# The `template:` reference resolves via name lookup against XDG user-data
+# (~/.local/share/presentation-kit/themes/pptx/<name>.pptx) OR a direct
+# path. The smoke runner uses an explicit --template path:
+#
+#   python3 skills/pptx/scripts/generate.py \
+#     --content fixtures/canonical-deck-pptx.yaml \
+#     --template <generated>/pptx/hcw-master.pptx \
+#     --output  /tmp/canonical-pptx.pptx
+#
+meta:
+  title: Generated theme test
+  author: Andreas Drozd
+  language: en-US
+  aspect_ratio: "16:9"
+  template: hcw-master    # XDG fallback; CLI --template overrides
+
+slides:
+  # ── Slide 1: title (Title Slide layout) ────────────────────────────────
+  - layout: title
+    title: Generated theme test
+    subtitle: Verifying brand projection — Andreas Drozd, 14 May 2026
+    notes: |
+      First slide exercises the title placeholder pair and the brand-color
+      hero treatment. Logo should appear top-right via the master overlay.
+
+  # ── Slide 2: bullets ──────────────────────────────────────────────────
+  - layout: bullets
+    title: Bullets and emphasis
+    bullets:
+      - "Title slide (lead variant)"
+      - "Section divider (invert variant)"
+      - "Bullet body"
+      - "Code block"
+      - "Table"
+      - "Inverted closing slide"
+    notes: |
+      Body content slide. Confirms brand-primary on the title and
+      brand-text body color from theme1.xml dk1 slot.
+
+  # ── Slide 3: section divider ──────────────────────────────────────────
+  - layout: section
+    title: "Section: Visual surface"
+    subtitle: Inverted slides for section dividers
+    notes: |
+      Section Header layout — bg should pick up dk2 (inverse.bg) from the
+      patched theme. Foreground text should be lt2 (inverse.text).
+
+  # ── Slide 4: code block ───────────────────────────────────────────────
+  - layout: code
+    title: Code block
+    code: |
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: theme-authoring-test
+      spec:
+        replicas: 3
+        selector:
+          matchLabels:
+            app: test
+    language: yaml
+    notes: |
+      Code rendering on pptx is image-based per per-format-notes.md;
+      brand-color border styling is approximate.
+
+  # ── Slide 5: table (rendered as bullets-as-table fallback) ────────────
+  # Note: the pptx generator's "bullets" layout is the closest match; a
+  # native table layout would require extending skills/pptx with a table
+  # render. Per per-format-notes.md, table fidelity is "partial — manual
+  # layout edit needed" for pptx.
+  - layout: bullets
+    title: Tokens
+    bullets:
+      - "primary       — #36566D — h1, brand surfaces, code rule"
+      - "secondary     — #4B5059 — h2, body emphasis"
+      - "primary_soft  — #7897AC — h3, subtitles"
+    notes: |
+      Tables are not first-class in skills/pptx (yet); we render the same
+      data as a bullet list. The visual gap is documented in
+      references/per-format-notes.md.
+
+  # ── Slide 6: inverted closing slide ───────────────────────────────────
+  - layout: end
+    title: Thank you.
+    subtitle: Generated from hcw-brand.yaml via /new-theme.
+    notes: |
+      Closing slide reuses the Title Slide layout (per LAYOUT_MAP). The
+      master's brand styling carries through.

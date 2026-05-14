@@ -10,13 +10,14 @@
   "homepage": "https://github.com/dro42/presentation-kit",
   "repository": "https://github.com/dro42/presentation-kit",
   "license": "MIT",
-  "keywords": ["presentation", "slides", "marp", "beamer", "latex", "slidev", "pptx", "powerpoint", "asciinema", "thesis", "deck", "sprint-review", "tech-talk"],
+  "keywords": ["presentation", "slides", "marp", "beamer", "latex", "slidev", "pptx", "powerpoint", "asciinema", "thesis", "deck", "sprint-review", "tech-talk", "theme", "brand"],
   "commands": [
     "./commands/marp.md",
     "./commands/beamer.md",
     "./commands/slidev.md",
     "./commands/pptx.md",
-    "./commands/asciinema.md"
+    "./commands/asciinema.md",
+    "./commands/new-theme.md"
   ],
   "agents": ["./agents/presentation-builder.md"],
   "skills": [
@@ -25,7 +26,8 @@
     "./skills/slidev/SKILL.md",
     "./skills/pptx/SKILL.md",
     "./skills/asciinema/SKILL.md",
-    "./skills/slide-overflow-check/SKILL.md"
+    "./skills/slide-overflow-check/SKILL.md",
+    "./skills/theme-authoring/SKILL.md"
   ],
   "hooks": "./hooks/hooks.json"
 }

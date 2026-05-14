@@ -133,6 +133,8 @@ Exit 0 = clean, exit 1 = overflow detected (re-render won't help; either tighten
 
 Themes are CSS files with a `@theme` declaration at the top. Marp ships **default**, **gaia**, **uncover** — prefer extending one of these via `@import` rather than starting from scratch.
 
+> **For brand-consistent themes across multiple formats**, use the `theme-authoring` skill (`/new-theme <brand.yaml>`) instead of editing this minimal starter directly. It generates the Marp CSS, Beamer .sty, Slidev directory theme, and pptx master from a single `brand.yaml`, keeping colors, fonts, logo, and footer in sync as the brand evolves. The minimal starter is still the right entry point if you only need Marp.
+
 1. **Start from `assets/themes/minimal.css`** — it's a commented stub showing the token surface (primary color, secondary color, font family, logo path, footer text). Override the brand-specific values with your own.
 2. **Register the theme.** Either pass `--theme-set path/to/theme.css` on the marp-cli invocation, or add it to `marp.config.js`, or place it next to the deck and let the Obsidian Marp Slides plugin pick it up (plugin scans the same directory).
 3. **Reference it from the deck.** Set `theme: minimal` (or your renamed `@theme` value) in the deck frontmatter — the value must match the `@theme` name declared in the CSS, not the file name.
