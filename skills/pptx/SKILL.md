@@ -113,6 +113,15 @@ soffice --headless --convert-to pdf deck.pptx   # convert to PDF for review
 python3 -c "from pptx import Presentation; p = Presentation('deck.pptx'); print(f'{len(p.slides)} slides')"
 ```
 
+**Geometry-level overflow check.** After generating the deck, convert it to PDF and run the `slide-overflow-check` skill to catch text running off the canvas — the python-pptx generator places text into placeholder boxes whose dimensions come from the master template, so a verbose bullet list can silently overflow even when the YAML validates fine:
+
+```bash
+soffice --headless --convert-to pdf deck.pptx     # requires LibreOffice; install: brew install --cask libreoffice
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/slide-overflow-check/scripts/check_overflow.py deck.pdf
+```
+
+If LibreOffice isn't installed, surface the install command and skip this step (visual review in PowerPoint is the manual fallback). Don't auto-install the cask.
+
 ## Common pitfalls
 
 - **Layout name mismatch.** If the YAML references a layout name not in the master template, `generate.py` falls back to `slide_layouts[1]` (Title and Content). Verify the master template's layout names via `python3 -c "from pptx import Presentation; p = Presentation('master.pptx'); [print(l.name) for l in p.slide_layouts]"`.
@@ -133,3 +142,4 @@ python3 -c "from pptx import Presentation; p = Presentation('deck.pptx'); print(
 - [ ] Aspect ratio matches the venue's projector (16:9 standard; 4:3 for older rooms).
 - [ ] If using a brand master: logo on every layout, brand colors in titles, brand fonts inherited.
 - [ ] For asciinema GIFs: tested in slideshow mode (not just editor) — GIFs animate.
+- [ ] **`slide-overflow-check` ran clean against a PDF export of the deck** (LibreOffice headless conversion + `slide-overflow-check`; skip if LibreOffice not installed and rely on manual visual review). See the companion `slide-overflow-check` skill.

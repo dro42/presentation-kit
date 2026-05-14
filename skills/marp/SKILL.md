@@ -121,6 +121,14 @@ marp deck.md --theme-set themes/minimal.css       # register a custom theme so `
 
 For recurring workflows (e.g. all decks in a project should auto-register the same theme set and allow local files), check in a `marp.config.js` next to the decks — see `references/export-and-config.md` for the exact shape.
 
+**After export succeeds, invoke the `slide-overflow-check` skill on the output PDF before reporting completion.** It catches text that collides with the footer band or runs off the page edge — the most common "looked fine in preview, looks broken in the PDF" failure mode in Marp decks (especially with custom themes that introduce a thicker footer band). One-line invocation:
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/slide-overflow-check/scripts/check_overflow.py deck.pdf
+```
+
+Exit 0 = clean, exit 1 = overflow detected (re-render won't help; either tighten the slide content or relax the theme's footer area). See the `slide-overflow-check` SKILL.md for tuning flags.
+
 ## Workflow D: Create or customize a theme
 
 Themes are CSS files with a `@theme` declaration at the top. Marp ships **default**, **gaia**, **uncover** — prefer extending one of these via `@import` rather than starting from scratch.
@@ -175,3 +183,4 @@ Full plugin notes (live preview pane, export-from-plugin caveats) live in `refer
 - [ ] Images use relative paths from the deck file; `--allow-local-files` flagged when exporting.
 - [ ] Output file path was confirmed with the user, not invented.
 - [ ] For thesis or institutional decks: theme is gaia, minimal, or your branded user theme — not the generic Marp default.
+- [ ] **`slide-overflow-check` ran clean against the output PDF** (no footer-collision or off-canvas warnings). See the companion `slide-overflow-check` skill.
