@@ -1,0 +1,147 @@
+/*
+ * slidev-theme-${short} — visual identity tokens.
+${generated_by}
+ *
+ * The brand spec is the source of truth — re-run /new-theme to regenerate.
+ */
+
+:root {
+  /* Brand color tokens */
+  --brand-primary:      ${primary};
+  --brand-secondary:    ${secondary};
+  --brand-primary-soft: ${primary_soft};${block_accent_var}
+
+  /* Surface tokens */
+  --brand-bg:        ${bg};
+  --brand-bg-alt:    ${bg_alt};
+  --brand-text:      ${text};
+  --brand-rule:      ${rule};
+  --brand-rule-soft: ${rule_soft};
+
+  /* Inverse pair (used by section divider) */
+  --brand-inverse-bg:   ${inverse_bg};
+  --brand-inverse-text: ${inverse_text};
+}
+
+html.dark, html[data-color-schema="dark"] {
+  --brand-bg:        ${text};
+  --brand-text:      ${bg};
+  --brand-bg-alt:    #2a2a2a;
+}
+
+/* ─── Slide canvas ──────────────────────────────────────────────────── */
+
+.slidev-layout {
+  background: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: ${font_body};
+  padding: ${pad_top}px ${pad_right}px ${pad_bottom}px ${pad_left}px;${block_logo_bg}
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: ${font_headings};
+  font-weight: 600;
+}
+
+.slidev-layout h1 {
+  color: var(--brand-primary);
+  font-size: 2.4em;
+  line-height: 1.1;
+  border-bottom: 2px solid var(--brand-rule);
+  padding-bottom: 0.18em;
+  margin-bottom: 0.5em;
+}
+.slidev-layout h2 { color: var(--brand-secondary); font-size: 1.55em; }
+.slidev-layout h3 { color: var(--brand-primary-soft); font-size: 1.2em; }
+
+.slidev-layout a       { color: var(--brand-primary); text-decoration: underline; }
+.slidev-layout strong  { color: var(--brand-primary); }
+
+.slidev-layout code {
+  background: ${code_bg};
+  color: var(--brand-primary);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-family: ${font_mono};
+  font-size: 0.9em;
+}
+
+.slidev-layout pre {
+  background: ${code_bg};
+  border-left: ${code_border_width}px solid ${code_border};
+  padding: 0.7em 1em;
+  border-radius: 4px;
+  font-size: ${code_font_size}em;
+  line-height: 1.4;
+}
+.slidev-layout pre code { background: transparent; color: var(--brand-text); padding: 0; }
+
+.slidev-layout hr {
+  border: none;
+  border-top: 1px solid var(--brand-rule-soft);
+  margin: 0.8em 0;
+}
+
+.slidev-layout blockquote {
+  border-left: 3px solid var(--brand-primary);
+  background: var(--brand-bg-alt);
+  color: var(--brand-secondary);
+  padding: 0.6em 1em;
+  margin-left: 0;
+  font-style: italic;
+}
+
+.slidev-layout table { border-collapse: collapse; width: 100%; }
+.slidev-layout th, .slidev-layout td {
+  border-bottom: 1px solid ${table_cell_border};
+  padding: 0.4em 0.8em;
+  text-align: left;
+}
+.slidev-layout th {
+  color: ${table_header};
+  border-bottom: ${table_header_border}px solid ${table_header};
+}
+
+.slidev-layout ul li::marker { color: var(--brand-primary); }
+.slidev-layout ol li::marker { color: var(--brand-primary); font-weight: 600; }
+
+/* ─── Cover layout (title slide) ────────────────────────────────────── */
+
+.slidev-layout.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slidev-layout.cover h1 {
+  font-size: 3em;
+  margin-bottom: 0.4em;
+  border-bottom: none;
+}
+.slidev-layout.cover h2 {
+  color: var(--brand-primary-soft);
+  font-weight: 400;
+}
+
+/* ─── Section divider ───────────────────────────────────────────────── */
+
+.slidev-layout.section {
+  background: var(--brand-inverse-bg);
+  color: var(--brand-inverse-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slidev-layout.section h1 { color: var(--brand-inverse-text); border-bottom-color: rgba(255,255,255,0.5); }
+.slidev-layout.section h2,
+.slidev-layout.section h3 { color: rgba(255,255,255,0.85); }
+.slidev-layout.section strong { color: #ffffff; }
+
+/* ─── Pagination / footer ───────────────────────────────────────────── */
+
+.slidev-page::after {
+  color: var(--brand-secondary);
+  font-size: 0.6em;
+}

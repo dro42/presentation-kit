@@ -50,6 +50,8 @@ Prerequisites: `python3 -c "import pptx, yaml" || pip install python-pptx pyyaml
 
 A "master template" is a `.pptx` file with empty slide layouts that python-pptx clones for each generated slide. Standard PowerPoint masters define 11 default layouts (Title Slide, Title and Content, Section Header, Two Content, Comparison, Title Only, Blank, Content with Caption, Picture with Caption, Title and Vertical Text, Vertical Title and Text).
 
+> **For brand-consistent masters across multiple formats**, use the `theme-authoring` skill (`/new-theme <brand.yaml>`) to generate `<short>-master.pptx` from a single `brand.yaml` — it patches the theme XML colors (`accent1`-`accent4`, dark/light text and bg slots), the major/minor fonts, the logo placeholder on every layout, and the footer. The same brand.yaml also produces the matching Marp/Beamer/Slidev artifacts. Use this skill's hand-built `.pptx` master path below when the brand requires PowerPoint-specific affordances (custom layouts, master diagrams) the `theme-authoring` curated baseline doesn't model.
+
 A brand master inherits these but applies:
 - Brand colors via the master color scheme
 - Brand fonts via the theme XML

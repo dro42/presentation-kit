@@ -148,6 +148,8 @@ If the check flags a frame, the right fix is usually `\small` / `\footnotesize` 
 
 Beamer themes are LaTeX style packages (`.sty` files) named `beamertheme<Name>.sty`. The bundled `assets/themes/beamerthemeMinimal.sty` is a token-surface extension of Madrid: colors, font choices, and footer text are defined as macros at the top of the file so brand-specific values can be confirmed once and propagate to every deck that uses `\usetheme{Minimal}`.
 
+> **For brand-consistent themes across multiple formats**, use the `theme-authoring` skill (`/new-theme <brand.yaml>`) instead of editing this minimal starter directly. It generates `beamertheme<Pascal>.sty` (with `BrandPrimary`/`BrandSecondary`/etc. token macros), plus the matching Marp/Slidev/pptx artifacts, from a single `brand.yaml`. The minimal starter is still the right entry point if you only need Beamer or want full hand-control over the LaTeX.
+
 1. **Start from `assets/themes/beamerthemeMinimal.sty`** — it's a commented stub. Override the brand-specific values (BrandPrimary, BrandSecondary, BrandAccent, footer text) with your own.
 2. **Register the theme.** Beamer requires the `.sty` file on `TEXINPUTS`. Three ways:
    - Copy it next to the `.tex` source (simplest, recommended for self-contained decks).

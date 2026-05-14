@@ -34,6 +34,50 @@ build/
 # Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Python virtual environments (e.g. for python-pptx in theme-authoring)
+.venv/
+venv/
+env/
+.python-version
 
 # Skill bundle output (rebuilt on demand via scripts/build-skill-bundles.sh)
 dist/
+
+# Generated themes (created by skills/theme-authoring/scripts/new_theme.py)
+# The /examples/ baseline specs are committed; runtime outputs are not.
+/themes/
+skills/*/themes-out/
+
+# Secrets / credentials — never commit these
+.env
+.env.*
+*.pem
+*.key
+*.p12
+secrets/
+credentials/
+
+# Direnv
+.envrc
+.direnv/
+
+# OS noise
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor extras
+*.swo
+*~
+.vscode/*.local.*
+

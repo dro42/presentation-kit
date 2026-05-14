@@ -203,6 +203,8 @@ Slidev themes come in two shapes:
 
 This skill bundles `assets/themes/slidev-theme-minimal/` as a local directory theme. Copy it into your project root and reference via `theme: ./slidev-theme-minimal`.
 
+> **For brand-consistent themes across multiple formats**, use the `theme-authoring` skill (`/new-theme <brand.yaml>`) instead of editing the minimal directory theme directly. It generates `slidev-theme-<short>/` (a complete local directory theme with brand colors, fonts, logo, and layouts wired in), plus the matching Marp/Beamer/pptx artifacts, from a single `brand.yaml`. The minimal starter is still the right entry point if you only need Slidev or want to hand-write Vue layouts.
+
 ### Theme resolution
 
 User themes resolve in two locations:
