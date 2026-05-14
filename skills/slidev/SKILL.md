@@ -186,6 +186,14 @@ Long builds delegate to the `presentation-builder` subagent so the main conversa
 
 `--with-clicks` expands each click step into its own PDF page (matches the live deck). `--with-toc` adds a table of contents page.
 
+**After PDF export succeeds, invoke the `slide-overflow-check` skill on the output PDF before reporting completion.** Slidev's flexible layout components (especially `two-cols`, `image-right`, code blocks with `{1-3|4|all}` click-step expansion) are particularly prone to overflowing the canvas at export time even when the live preview looked fine. One-line invocation:
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/slide-overflow-check/scripts/check_overflow.py slides-export.pdf
+```
+
+If a slide flags, common Slidev fixes: switch to a smaller built-in layout, add `class: text-sm` to the slide frontmatter, or split the click-step expansion into multiple slides.
+
 ## Workflow F: Themes
 
 Slidev themes come in two shapes:
@@ -240,3 +248,4 @@ Surface install commands to the user. Never auto-install.
 - [ ] Asciinema casts (if any) placed under `public/` and referenced by root-relative paths.
 - [ ] Code blocks use line highlights / twoslash where they add value, not where they don't.
 - [ ] `package.json` pins `@slidev/cli` to a specific version (not `latest`).
+- [ ] **`slide-overflow-check` ran clean against the exported PDF** (no footer-collision or off-canvas warnings). See the companion `slide-overflow-check` skill.

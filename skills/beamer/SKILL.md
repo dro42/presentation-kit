@@ -136,6 +136,14 @@ latexmk -C
 
 For multi-output batch builds (PDF for distribution + handout-mode PDF + speaker-notes PDF), see `references/build-and-config.md`.
 
+**After compile succeeds, invoke the `slide-overflow-check` skill on the output PDF before reporting completion.** It complements LaTeX's own `Overfull \hbox` warnings: those catch *typesetting* overruns inside a single line, while this check catches *layout* overruns — frame contents that exceed the canvas vertically and collide with the footer / page-number rail. One-line invocation:
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/skills/slide-overflow-check/scripts/check_overflow.py main.pdf
+```
+
+If the check flags a frame, the right fix is usually `\small` / `\footnotesize` for the body, or splitting the frame across two with `\framebreak` or a manual continuation. See the `slide-overflow-check` SKILL.md for tuning flags (Beamer themes with thick footer bands like Madrid may want `--footer-clearance 30`).
+
 ## Workflow D: Create or customize a theme
 
 Beamer themes are LaTeX style packages (`.sty` files) named `beamertheme<Name>.sty`. The bundled `assets/themes/beamerthemeMinimal.sty` is a token-surface extension of Madrid: colors, font choices, and footer text are defined as macros at the top of the file so brand-specific values can be confirmed once and propagate to every deck that uses `\usetheme{Minimal}`.
@@ -186,3 +194,4 @@ Full per-package selector reference (`\setbeamercolor`, `\setbeamerfont`, `\setb
 - [ ] Speaker notes present in `\note{...}` blocks for every content frame (skip title/section dividers)
 - [ ] Aspect ratio matches the venue's projector
 - [ ] Backup section present for thesis defense (Q&A material parked there, not in the main flow)
+- [ ] **`slide-overflow-check` ran clean against the output PDF** (catches layout overruns the LaTeX log misses). See the companion `slide-overflow-check` skill.

@@ -24,7 +24,8 @@
     "./skills/beamer/SKILL.md",
     "./skills/slidev/SKILL.md",
     "./skills/pptx/SKILL.md",
-    "./skills/asciinema/SKILL.md"
+    "./skills/asciinema/SKILL.md",
+    "./skills/slide-overflow-check/SKILL.md"
   ],
   "hooks": "./hooks/hooks.json"
 }
