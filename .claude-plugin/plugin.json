@@ -21,13 +21,12 @@
   ],
   "agents": ["./agents/presentation-builder.md"],
   "skills": [
-    "./skills/marp/SKILL.md",
-    "./skills/beamer/SKILL.md",
-    "./skills/slidev/SKILL.md",
-    "./skills/pptx/SKILL.md",
-    "./skills/asciinema/SKILL.md",
-    "./skills/slide-overflow-check/SKILL.md",
-    "./skills/theme-authoring/SKILL.md"
-  ],
-  "hooks": "./hooks/hooks.json"
+    "./skills/marp",
+    "./skills/beamer",
+    "./skills/slidev",
+    "./skills/pptx",
+    "./skills/asciinema",
+    "./skills/slide-overflow-check",
+    "./skills/theme-authoring"
+  ]
 }
