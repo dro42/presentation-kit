@@ -5,9 +5,9 @@ How to build, export, and configure a Slidev project for delivery.
 ## Dev server
 
 ```bash
-npx slidev                       # opens http://localhost:3030, hot reload
-npx slidev --port 5050           # custom port
-npx slidev --remote              # accept connections from network (audience interaction)
+npx @slidev/cli                       # opens http://localhost:3030, hot reload
+npx @slidev/cli --port 5050           # custom port
+npx @slidev/cli --remote              # accept connections from network (audience interaction)
 ```
 
 In `--remote` mode, Slidev prints a URL and QR code for audience devices. Audiences can draw on slides (with `--drawings`) or send messages.
@@ -15,7 +15,7 @@ In `--remote` mode, Slidev prints a URL and QR code for audience devices. Audien
 ## Build static SPA
 
 ```bash
-npx slidev build
+npx @slidev/cli build
 # Output: dist/  (a deployable static site)
 ```
 
@@ -27,13 +27,13 @@ npx slidev build
 For sub-path hosting (e.g. `https://example.com/my-deck/`), pass `--base`:
 
 ```bash
-npx slidev build --base /my-deck/
+npx @slidev/cli build --base /my-deck/
 ```
 
 ## Export to PDF
 
 ```bash
-npx slidev export --format pdf
+npx @slidev/cli export --format pdf
 # Output: slides-export.pdf
 ```
 
@@ -54,7 +54,7 @@ Flags worth knowing:
 ## Export to PPTX (experimental)
 
 ```bash
-npx slidev export --format pptx
+npx @slidev/cli export --format pptx
 ```
 
 PPTX export converts each slide to a static image and embeds it in a `.pptx`. **You lose**: Vue components, code interactivity, live links. **You keep**: visual fidelity (mostly).
@@ -64,7 +64,7 @@ If pptx is a hard target, the `pptx` skill (this plugin) is a better fit — it 
 ## Export to PNG (per-slide images)
 
 ```bash
-npx slidev export --format png
+npx @slidev/cli export --format png
 # Output: slides-export/slide-1.png, slide-2.png, ...
 ```
 

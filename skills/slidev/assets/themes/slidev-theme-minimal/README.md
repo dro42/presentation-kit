@@ -23,7 +23,7 @@ theme: ./slidev-theme-minimal
 ---
 ```
 
-This works with `npx slidev`, `npx slidev build`, and `npx slidev export --format pdf`.
+This works with `npx @slidev/cli`, `npx @slidev/cli build`, and `npx @slidev/cli export --format pdf`.
 
 ## Customize
 

@@ -96,7 +96,7 @@ Slide separator is `---` with an **optional** YAML frontmatter block immediately
    # frontmatter references it as: theme: ./slidev-theme-minimal
    ```
 5. **Apply the slide-budget rule** (one slide per minute of talk; see `marp/SKILL.md` Workflow A for the per-format table).
-6. **Run the dev server:** `npx slidev` — opens `http://localhost:3030` with hot reload.
+6. **Run the dev server:** `npx @slidev/cli` — opens `http://localhost:3030` with hot reload.
 
 ## Workflow B: Author with layouts and components
 
@@ -165,21 +165,21 @@ For PDF export, the live player renders as the first-frame snapshot. If you need
 
 ```bash
 # Dev server with hot reload (recommended for authoring)
-npx slidev
+npx @slidev/cli
 
 # Static SPA (deployable to Netlify, Vercel, GitHub Pages)
-npx slidev build
+npx @slidev/cli build
 # Output: dist/  (commit to gh-pages or upload)
 
 # PDF export (uses Playwright — installs Chromium on first run)
-npx slidev export --format pdf --with-clicks
+npx @slidev/cli export --format pdf --with-clicks
 # Output: slides-export.pdf
 
 # PPTX export (experimental in Slidev; expect formatting drift)
-npx slidev export --format pptx
+npx @slidev/cli export --format pptx
 
 # Speaker notes PDF
-npx slidev export --format pdf --with-notes
+npx @slidev/cli export --format pdf --with-notes
 ```
 
 Long builds delegate to the `presentation-builder` subagent so the main conversation stays clean.
@@ -242,8 +242,8 @@ Surface install commands to the user. Never auto-install.
 
 ## Quality checklist before delivering
 
-- [ ] `npx slidev build` exits 0; `dist/index.html` opens cleanly in a browser.
-- [ ] `npx slidev export --format pdf` produces a non-empty PDF (≥ 50 KB).
+- [ ] `npx @slidev/cli build` exits 0; `dist/index.html` opens cleanly in a browser.
+- [ ] `npx @slidev/cli export --format pdf` produces a non-empty PDF (≥ 50 KB).
 - [ ] Slide count matches the talk slot.
 - [ ] Speaker notes present on every content slide (HTML comments at end).
 - [ ] Theme renders both light and dark if `colorSchema: all` is declared.
