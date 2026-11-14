@@ -7,7 +7,7 @@
 # placed alongside this file:
 #
 #   cp -R <generated>/slidev/slidev-theme-hcw <here>/
-#   npx slidev fixtures/canonical-deck-slidev.md
+#   npx @slidev/cli fixtures/canonical-deck-slidev.md
 #
 theme: ./slidev-theme-hcw
 title: Generated theme test

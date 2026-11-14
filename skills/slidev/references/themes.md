@@ -45,9 +45,9 @@ theme: ./slidev-theme-<name>
 ```
 
 Slidev resolves the path relative to the deck. Local themes work with:
-- `npx slidev` dev server
-- `npx slidev build` SPA export
-- `npx slidev export --format pdf` (Playwright)
+- `npx @slidev/cli` dev server
+- `npx @slidev/cli build` SPA export
+- `npx @slidev/cli export --format pdf` (Playwright)
 - `colorSchema: all` light/dark switching (when CSS handles it)
 
 ## The bundled `slidev-theme-minimal`
@@ -65,7 +65,7 @@ To use it in a Slidev project:
 cp -R <plugin-path>/skills/slidev/assets/themes/slidev-theme-minimal ./
 # slides.md frontmatter:
 #   theme: ./slidev-theme-minimal
-npx slidev
+npx @slidev/cli
 ```
 
 ## Token-driven customization
@@ -116,7 +116,7 @@ Start from the bundled `slidev-theme-minimal`:
 2. Edit `package.json` — set `"name": "slidev-theme-myproject"`.
 3. Edit `styles/index.css` — override the brand tokens and any specific selectors.
 4. Add/customize layouts in `layouts/` (e.g. a custom `cover.vue` with your logo).
-5. Test in a scratch project: `cp -R slidev-theme-myproject /tmp/test-deck/ && cd /tmp/test-deck && npx slidev`.
+5. Test in a scratch project: `cp -R slidev-theme-myproject /tmp/test-deck/ && cd /tmp/test-deck && npx @slidev/cli`.
 6. When satisfied, save into XDG user-data: `bash scripts/save-theme.sh slidev myproject ./slidev-theme-myproject`.
 
 For wider distribution (multiple projects, other people), publish to npm as `slidev-theme-myproject` — drops the `./` prefix in deck frontmatter.
